@@ -1,0 +1,45 @@
+
+        // lo truc tiep
+        const lo_truc_tiep = {}
+        _.forEach(data, function (val, key) {
+          _.map(val, function (item) {
+            const duoi = item.substr(-2)
+            lo_truc_tiep[duoi] = key === 'Đặc biệt'
+          })
+        })
+
+        console.log('loto truc tiep')
+        // console.log(_.keys(lo_truc_tiep).sort());
+        console.log(lo_truc_tiep)
+
+        // dau duoi
+
+        const dau = {}
+        const duoi = {}
+        const _keys = _.range(10)
+        _keys.forEach(function (i) {
+          dau[i] = []
+          duoi[i] = []
+        })
+
+        _.keys(lo_truc_tiep).forEach(function (item) {
+          let found_dau = false, found_duoi = false
+          _keys.some(function (ii) {
+            if (!found_dau && item.indexOf(ii) == 0) {
+              var _obj = {}
+              _obj[item] = lo_truc_tiep[item]
+              dau[ii].push(_obj)
+              found_dau = true
+            }
+            if (!found_duoi && item.lastIndexOf(ii) == 1) {
+              var _obj = {}
+              _obj[item] = lo_truc_tiep[item]
+              duoi[ii].push(_obj)
+              found_duoi = true
+            }
+            return found_dau && found_duoi
+          })
+        })
+
+        console.log('dau ', dau, '\nduoi ', duoi)
+        return true
