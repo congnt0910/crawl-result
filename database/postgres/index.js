@@ -1,7 +1,9 @@
 import config from '../../config'
-import {isPro} from '../../bin/env'
-import {createSchema} from './schema'
+import { isPro, isDropDb } from '../../bin/env'
+import { createSchema } from './schema'
 import _ from 'lodash'
+import LogDebug from '../../helper/logdebug'
+const _debug = new LogDebug('DATABASE')
 
 const tableName = {
   'mien': 'mien',
@@ -53,7 +55,7 @@ const createDatabase = () => {
  *
  */
 const dropDatabase = () => {
-  if (isPro()) {
+  if (isPro() || !isDropDb()) {
     return Promise.resolve(true)
   }
   const knexMaster = require('knex')({
@@ -66,6 +68,7 @@ const dropDatabase = () => {
       return knexMaster.destroy()
     })
     .then(() => {
+      _debug('Drop data base success')
       return true
     })
 }
@@ -90,7 +93,7 @@ const connect = () => {
     .then(createDatabase)
     .then(() => createSchema(tableName, conn))
     .then(() => {
-      console.log('db ready')
+      _debug('db ready')
       dbReady = true
     })
 

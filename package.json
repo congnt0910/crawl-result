@@ -8,7 +8,8 @@
     "nodemon": "nodemon debugcode.js --exec babel-node --presets es2015,stage-2",
     "testHttpHelper": "set NODE_ENV=TEST&&mocha --compilers js:babel-register helper/__test__/**/*test.js",
     "testCrawl": "set NODE_ENV=TEST&&mocha --compilers js:babel-register api/__test__/**/*test.js",
-    "test": "node app.js"
+    "test": "node app.js",
+    "eslint": "./node_modules/.bin/eslint -c .eslintrc --ignore-path .gitignore ./**/*"
   },
   "author": "NTC",
   "license": "ISC",
@@ -38,6 +39,7 @@
     "eslint-plugin-standard": "^2.0.0",
     "mocha": "^3.0.2",
     "nock": "^8.0.0",
+    "node-env-file": "^0.1.8",
     "nodemon": "^1.10.2"
   }
 }

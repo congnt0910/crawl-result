@@ -186,7 +186,7 @@ const defautStruct = () => {
   }
 }
 
-let lichMoThuong = []
+const lichMoThuong = []
 LOAI_DATA.map(item => {
   const obj = defautStruct()
   obj.mien = item.mien

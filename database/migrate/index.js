@@ -565,13 +565,13 @@ export const run = () => {
     })
     .then(() => {
       // select giai to check insert data
-      return conn('mien').select()
+      return conn(tableName.mien).select()
         .then(rs => {
           console.log('mien: \n', JSON.stringify(rs, null, 4))
           return true
         })
         .then(() => {
-          return conn('loai').select()
+          return conn(tableName.loai).select()
             .then(rs => {
               console.log('loai: \n', JSON.stringify(rs, null, 4))
               return true

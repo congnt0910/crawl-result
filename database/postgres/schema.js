@@ -57,7 +57,7 @@ const createSchema = (tableName, conn) => {
           return conn.schema.createTable(tableName.ketqua, (table) => {
             table.increments('id').primary()
             table.string('value', 255).comment('')
-            table.string('time', 255).comment('MM/DD/YYYY')
+            table.integer('date', 255).comment('ngay mo thuong. luu dang timestamp MM/DD/YYYY')
             table.integer('loaiId')
             table.integer('giaiId')
             table.foreign('loaiId').references('loai.id')
