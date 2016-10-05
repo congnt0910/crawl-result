@@ -1,10 +1,8 @@
 const dbConfig = {
-  connectionLimit: 100,
-  host: 'localhost',
-  port: '3306',
-  database: 'xs_db',
-  user: 'root',
-  password: ''
+  host: '127.0.0.1',
+  user: 'postgres',
+  password: '1',
+  database: 'xs_db'
 }
 
 const dbConfigExtra = {
@@ -16,4 +14,3 @@ export {
   dbConfig,
   dbConfigExtra
 }
-

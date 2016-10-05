@@ -1,0 +1,505 @@
+"C:\Program Files (x86)\JetBrains\WebStorm 2016.1\bin\runnerw.exe" "C:\Program Files\nodejs\node.exe" "C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js" run-script nodemon
+
+> xs@1.0.0 nodemon D:\PROJECT\NodeJsNtc\crawler
+> nodemon debugcode.js --exec babel-node --presets es2015,stage-2
+
+[nodemon] 1.10.2
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching: *.*
+[nodemon] starting `babel-node debugcode.js --presets es2015,stage-2`
+db ready
+start migrate
+mien:
+ [
+    {
+        "id": 1,
+        "name": "MIỀN BẮC",
+        "created_at": "2016-10-05T11:34:56.487Z",
+        "updated_at": "2016-10-05T11:34:56.487Z"
+    },
+    {
+        "id": 2,
+        "name": "MIỀN TRUNG",
+        "created_at": "2016-10-05T11:34:56.487Z",
+        "updated_at": "2016-10-05T11:34:56.487Z"
+    },
+    {
+        "id": 3,
+        "name": "MIỀN NAM",
+        "created_at": "2016-10-05T11:34:56.487Z",
+        "updated_at": "2016-10-05T11:34:56.487Z"
+    }
+]
+loai:
+ [
+    {
+        "id": 1,
+        "name": "Truyền Thống",
+        "scanDate": "[2,3,4,5,6,7,8]",
+        "scanTimeBegin": "18:15",
+        "scanTimeEnd": "18:45",
+        "useScanTime": false,
+        "url": "/xo-so-truyen-thong.php",
+        "mienId": 1,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 2,
+        "name": "Điện Toán 123",
+        "scanDate": "[4]",
+        "scanTimeBegin": "18:05",
+        "scanTimeEnd": "18:35",
+        "useScanTime": false,
+        "url": "/xo-so-dien-toan-123.php",
+        "mienId": 1,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 3,
+        "name": "Điện Toán 6x36",
+        "scanDate": "[4]",
+        "scanTimeBegin": "18:05",
+        "scanTimeEnd": "18:35",
+        "useScanTime": false,
+        "url": "/xo-so-dien-toan-6x36.php",
+        "mienId": 1,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 4,
+        "name": "Thần Tài",
+        "scanDate": "[4]",
+        "scanTimeBegin": "18:05",
+        "scanTimeEnd": "18:35",
+        "useScanTime": false,
+        "url": "/xo-so-than-tai.php",
+        "mienId": 1,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 5,
+        "name": "Bình Định",
+        "scanDate": "[5]",
+        "scanTimeBegin": "17:15",
+        "scanTimeEnd": "17:45",
+        "useScanTime": false,
+        "url": "/xo-so-binh-dinh.php",
+        "mienId": 2,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 6,
+        "name": "Đà Nẵng",
+        "scanDate": "[4]",
+        "scanTimeBegin": "17:15",
+        "scanTimeEnd": "17:50",
+        "useScanTime": false,
+        "url": "/xo-so-da-nang.php",
+        "mienId": 2,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 7,
+        "name": "Đắc Lắc",
+        "scanDate": "[3]",
+        "scanTimeBegin": "17:15",
+        "scanTimeEnd": "17:45",
+        "useScanTime": false,
+        "url": "/xo-so-dac-lac.php",
+        "mienId": 2,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 8,
+        "name": "Đắc Nông",
+        "scanDate": "[7]",
+        "scanTimeBegin": "17:15",
+        "scanTimeEnd": "17:45",
+        "useScanTime": false,
+        "url": "/xo-so-dac-nong.php",
+        "mienId": 2,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 9,
+        "name": "Gia Lai",
+        "scanDate": "[6]",
+        "scanTimeBegin": "17:15",
+        "scanTimeEnd": "17:45",
+        "useScanTime": false,
+        "url": "/xo-so-gia-lai.php",
+        "mienId": 2,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 10,
+        "name": "Khánh Hoà",
+        "scanDate": "[4]",
+        "scanTimeBegin": "17:15",
+        "scanTimeEnd": "17:50",
+        "useScanTime": false,
+        "url": "/xo-so-khanh-hoa.php",
+        "mienId": 2,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 11,
+        "name": "Kon Tum",
+        "scanDate": "[8]",
+        "scanTimeBegin": "17:15",
+        "scanTimeEnd": "17:45",
+        "useScanTime": false,
+        "url": "/xo-so-kon-tum.php",
+        "mienId": 2,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 12,
+        "name": "Ninh Thuận",
+        "scanDate": "[6]",
+        "scanTimeBegin": "17:15",
+        "scanTimeEnd": "17:45",
+        "useScanTime": false,
+        "url": "/xo-so-ninh-thuan.php",
+        "mienId": 2,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 13,
+        "name": "Phú Yên",
+        "scanDate": "[2]",
+        "scanTimeBegin": "17:15",
+        "scanTimeEnd": "17:45",
+        "useScanTime": false,
+        "url": "/xo-so-phu-yen.php",
+        "mienId": 2,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 14,
+        "name": "Quảng Bình",
+        "scanDate": "[5]",
+        "scanTimeBegin": "17:15",
+        "scanTimeEnd": "17:45",
+        "useScanTime": false,
+        "url": "/xo-so-quang-binh.php",
+        "mienId": 2,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 15,
+        "name": "Quảng Nam",
+        "scanDate": "[3]",
+        "scanTimeBegin": "17:15",
+        "scanTimeEnd": "17:45",
+        "useScanTime": false,
+        "url": "/xo-so-quang-nam.php",
+        "mienId": 2,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 16,
+        "name": "Quảng Ngãi",
+        "scanDate": "[7]",
+        "scanTimeBegin": "17:15",
+        "scanTimeEnd": "17:45",
+        "useScanTime": false,
+        "url": "/xo-so-quang-ngai.php",
+        "mienId": 2,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 17,
+        "name": "Quảng Trị",
+        "scanDate": "[5]",
+        "scanTimeBegin": "17:15",
+        "scanTimeEnd": "17:45",
+        "useScanTime": false,
+        "url": "/xo-so-quang-tri.php",
+        "mienId": 2,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 18,
+        "name": "Thừa Thiên Huế",
+        "scanDate": "[2]",
+        "scanTimeBegin": "17:15",
+        "scanTimeEnd": "17:45",
+        "useScanTime": false,
+        "url": "/xo-so-thua-thien-hue.php",
+        "mienId": 2,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 19,
+        "name": "An Giang",
+        "scanDate": "[5]",
+        "scanTimeBegin": "16:15",
+        "scanTimeEnd": "16:45",
+        "useScanTime": false,
+        "url": "/xo-so-an-giang.php",
+        "mienId": 3,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 20,
+        "name": "Bạc Liêu",
+        "scanDate": "[3]",
+        "scanTimeBegin": "16:15",
+        "scanTimeEnd": "16:45",
+        "useScanTime": false,
+        "url": "/xo-so-bac-lieu.php",
+        "mienId": 3,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 21,
+        "name": "Bến Tre",
+        "scanDate": "[3]",
+        "scanTimeBegin": "16:15",
+        "scanTimeEnd": "16:45",
+        "useScanTime": false,
+        "url": "/xo-so-ben-tre.php",
+        "mienId": 3,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 22,
+        "name": "Bình Dương",
+        "scanDate": "[6]",
+        "scanTimeBegin": "16:15",
+        "scanTimeEnd": "16:45",
+        "useScanTime": false,
+        "url": "/xo-so-binh-duong.php",
+        "mienId": 3,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 23,
+        "name": "Bình Phước",
+        "scanDate": "[7]",
+        "scanTimeBegin": "16:15",
+        "scanTimeEnd": "16:45",
+        "useScanTime": false,
+        "url": "/xo-so-binh-phuoc.php",
+        "mienId": 3,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 24,
+        "name": "Bình Thuận",
+        "scanDate": "[5]",
+        "scanTimeBegin": "16:15",
+        "scanTimeEnd": "16:45",
+        "useScanTime": false,
+        "url": "/xo-so-binh-thuan.php",
+        "mienId": 3,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 25,
+        "name": "Cà Mau",
+        "scanDate": "[2]",
+        "scanTimeBegin": "16:15",
+        "scanTimeEnd": "16:45",
+        "useScanTime": false,
+        "url": "/xo-so-ca-mau.php",
+        "mienId": 3,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 26,
+        "name": "Cần Thơ",
+        "scanDate": "[4]",
+        "scanTimeBegin": "16:15",
+        "scanTimeEnd": "16:50",
+        "useScanTime": false,
+        "url": "/xo-so-can-tho.php",
+        "mienId": 3,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 27,
+        "name": "Đà Lạt",
+        "scanDate": "[]",
+        "scanTimeBegin": "16:00",
+        "scanTimeEnd": "18:45",
+        "useScanTime": false,
+        "url": "/xo-so-da-lat.php",
+        "mienId": 3,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 28,
+        "name": "Đồng Nai",
+        "scanDate": "[4]",
+        "scanTimeBegin": "16:15",
+        "scanTimeEnd": "16:50",
+        "useScanTime": false,
+        "url": "/xo-so-dong-nai.php",
+        "mienId": 3,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 29,
+        "name": "Đồng Tháp",
+        "scanDate": "[2]",
+        "scanTimeBegin": "16:15",
+        "scanTimeEnd": "16:45",
+        "useScanTime": false,
+        "url": "/xo-so-dong-thap.php",
+        "mienId": 3,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 30,
+        "name": "Hậu Giang",
+        "scanDate": "[7]",
+        "scanTimeBegin": "16:15",
+        "scanTimeEnd": "16:45",
+        "useScanTime": false,
+        "url": "/xo-so-hau-giang.php",
+        "mienId": 3,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 31,
+        "name": "Hồ Chí Minh",
+        "scanDate": "[2,7]",
+        "scanTimeBegin": "16:15",
+        "scanTimeEnd": "16:45",
+        "useScanTime": false,
+        "url": "/xo-so-ho-chi-minh.php",
+        "mienId": 3,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 32,
+        "name": "Kiên Giang",
+        "scanDate": "[8]",
+        "scanTimeBegin": "16:15",
+        "scanTimeEnd": "16:45",
+        "useScanTime": false,
+        "url": "/xo-so-kien-giang.php",
+        "mienId": 3,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 33,
+        "name": "Long An",
+        "scanDate": "[7]",
+        "scanTimeBegin": "16:15",
+        "scanTimeEnd": "16:45",
+        "useScanTime": false,
+        "url": "/xo-so-long-an.php",
+        "mienId": 3,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 34,
+        "name": "Sóc Trăng",
+        "scanDate": "[4]",
+        "scanTimeBegin": "16:15",
+        "scanTimeEnd": "16:50",
+        "useScanTime": false,
+        "url": "/xo-so-soc-trang.php",
+        "mienId": 3,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 35,
+        "name": "Tây Ninh",
+        "scanDate": "[5]",
+        "scanTimeBegin": "16:15",
+        "scanTimeEnd": "16:45",
+        "useScanTime": false,
+        "url": "/xo-so-tay-ninh.php",
+        "mienId": 3,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 36,
+        "name": "Tiền Giang",
+        "scanDate": "[8]",
+        "scanTimeBegin": "16:15",
+        "scanTimeEnd": "16:45",
+        "useScanTime": false,
+        "url": "/xo-so-tien-giang.php",
+        "mienId": 3,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 37,
+        "name": "Trà Vinh",
+        "scanDate": "[6]",
+        "scanTimeBegin": "16:15",
+        "scanTimeEnd": "16:45",
+        "useScanTime": false,
+        "url": "/xo-so-tra-vinh.php",
+        "mienId": 3,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 38,
+        "name": "Vĩnh Long",
+        "scanDate": "[6]",
+        "scanTimeBegin": "16:15",
+        "scanTimeEnd": "16:45",
+        "useScanTime": false,
+        "url": "/xo-so-vinh-long.php",
+        "mienId": 3,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    },
+    {
+        "id": 39,
+        "name": "Vũng Tàu",
+        "scanDate": "[3]",
+        "scanTimeBegin": "16:15",
+        "scanTimeEnd": "16:45",
+        "useScanTime": false,
+        "url": "/xo-so-vung-tau.php",
+        "mienId": 3,
+        "created_at": "2016-10-05T11:34:56.514Z",
+        "updated_at": "2016-10-05T11:34:56.514Z"
+    }
+]
+
+Process finished with exit code -1073741510 (0xC000013A: interrupted by Ctrl+C)

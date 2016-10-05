@@ -10,8 +10,6 @@ const createSchema = (tableName, conn) => {
           return conn.schema.createTable(tableName.mien, (table) => {
             table.increments('id').primary()
             table.string('name', 255).unique().collate('utf8_unicode_ci')
-            table.string('scanTimeBegin', 255).comment('hh:mm - thoi gian bat dau quet lay ket qua mo thuong. su dung chung cho cac loai xo so trong mien neu ko dc set rieng tung loai')
-            table.string('scanTimeEnd', 255).comment('hh:mm - thoi gian dung quet')
             table.timestamps(true, true) // adds a created_at and updated_at
           })
         })

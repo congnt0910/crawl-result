@@ -1,11 +1,11 @@
-import { mysqlConfig, mysqlMultipleStatementsConfig } from './mysql'
+import {dbConfig, dbConfigExtra} from './postgres'
 
 export default {
   inputFormatDate: 'MM/DD/YYYY',
   dbConfig: {
-    ...mysqlConfig
+    ...dbConfig
   },
   dbConfigExtra: {
-    ...mysqlMultipleStatementsConfig
+    ...dbConfigExtra
   }
 }

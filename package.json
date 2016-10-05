@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "set NODE_ENV=DEV&&nodemon index.js --exec babel-node --presets es2015,stage-2",
-    "debugApi": "set NODE_ENV=DEV&&set DEBUG=ketquanet&&nodemon api/__test__/test.js --exec babel-node --presets es2015,stage-2",
-    "testHttpHelper": "set NODE_ENV=TEST&&mocha --compilers js:babel-register api/helper/__test__/**/*test.js",
+    "nodemon": "nodemon debugcode.js --exec babel-node --presets es2015,stage-2",
+    "testHttpHelper": "set NODE_ENV=TEST&&mocha --compilers js:babel-register helper/__test__/**/*test.js",
     "testCrawl": "set NODE_ENV=TEST&&mocha --compilers js:babel-register api/__test__/**/*test.js",
     "test": "node app.js"
   },
@@ -19,6 +19,7 @@
     "lodash": "^4.16.2",
     "moment": "^2.13.0",
     "mysql": "^2.10.2",
+    "pg": "^6.1.0",
     "request": "^2.72.0",
     "request-promise": "^4.1.1",
     "tough-cookie": "^2.3.1"

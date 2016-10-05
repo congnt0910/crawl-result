@@ -1,6 +1,6 @@
 import moment from 'moment'
 import cheerio from 'cheerio'
-import HttpRequest from '../helper/httpRequest'
+import HttpRequest from '../../helper/httpRequest'
 import config from '../../config'
 
 const debug = require('debug')('ketquanet')
