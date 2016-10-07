@@ -9,7 +9,7 @@
     "testHttpHelper": "set NODE_ENV=TEST&&mocha --compilers js:babel-register src/helper/__test__/**/*test.js",
     "testCrawl": "set NODE_ENV=TEST&&mocha --compilers js:babel-register src/api/__test__/**/*test.js",
     "gulp": "./node_modules/.bin/gulp",
-    "eslint": "./node_modules/.bin/eslint -c .eslintrc --ignore-path .gitignore --ignore-pattern .eslintignore src/**/*"
+    "eslint": "./node_modules/.bin/eslint --config .eslintrc src/**/*.js"
   },
   "author": "NTC",
   "license": "ISC",

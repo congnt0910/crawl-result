@@ -6,7 +6,7 @@ export const processKQ = (KQ, mien, loai) => {
   return Promise.resolve(KQ)
 }
 
-const doProcessKQ = () => {
+export const doProcessKQ = () => {
   // todo: select mien, loai from db
   // todo: call api crawl data
 
