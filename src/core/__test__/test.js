@@ -1,8 +1,8 @@
 /* eslint-disable no-undef */
 // import { expect } from 'chai'
-import { processKQBeforeInsert } from '../index'
+import { processKQ } from '../index'
 import { conn, tableName } from '../../database/knex'
-const debug = require('debug')('processKQBeforeInsert')
+const debug = require('debug')('processKQ')
 
 const kq = {
   'Đặc biệt': [
@@ -50,7 +50,7 @@ const kq = {
   ]
 }
 let mien, loai
-describe('test processKQBeforeInsert', () => {
+describe('test processKQ', () => {
   before(() => {
     // get mien, loai
     return conn(tableName.mien).select()
@@ -67,7 +67,7 @@ describe('test processKQBeforeInsert', () => {
       })
   })
   it('run', () => {
-    processKQBeforeInsert(kq, mien, loai)
+    processKQ(kq, mien, loai)
       .then(rs => {
         debug(JSON.stringify(rs, null, 4))
       })

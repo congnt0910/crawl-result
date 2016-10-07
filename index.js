@@ -1,3 +1,3 @@
-import { createDatabase } from './database/mysql/index'
+import { createDatabase } from 'src/database/mysql/index'
 
 createDatabase()

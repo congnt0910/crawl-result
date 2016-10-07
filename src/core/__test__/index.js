@@ -1,4 +1,4 @@
-import { processKQBeforeInsert } from '../index'
+import { processKQ } from '../index'
 import { conn, tableName, waitDbReady } from '../../database/knex'
 
 import LogDebug from '../../helper/logdebug'
@@ -69,7 +69,7 @@ export const run = () => {
       return true
     })
     .then(() => {
-      return processKQBeforeInsert(kq, mien, loai)
+      return processKQ(kq, mien, loai)
     })
     .then(rs => {
       _debug(JSON.stringify(rs, null, 4))

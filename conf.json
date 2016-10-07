@@ -1,0 +1,22 @@
+{
+  "plugins": ["plugins/markdown"],
+  "templates": {
+    "systemName": "Demo jsdoc",
+    "copyright": "GraphQL Endpoint Docs",
+    "navType": "inline",
+    "theme": "flatly",
+    "linenums": true,
+    "inverseNav": true,
+    "outputSourceFiles": true,
+    "outputSourcePath": false,
+    "dateFormat": "MM/DD/YYYY",
+    "syntaxTheme": "default",
+    "sort": true,
+    "search": true
+  },
+  "opts": {
+    "encoding": "utf8",
+    "destination": "./docs/",
+    "recurse": true
+  }
+}
