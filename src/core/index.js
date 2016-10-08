@@ -1,7 +1,7 @@
 import loaiModel from '../model/loai'
 import moment from 'moment'
 import schedule from 'node-schedule'
-import { doProcessScheduleCrawl } from './scan'
+import { doProcessScheduleCrawl } from './crawl'
 
 /**
  * start main schedule
