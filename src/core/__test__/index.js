@@ -1,4 +1,4 @@
-import { processKQ } from '../index'
+import { _processKQ } from '../scan'
 import { conn, tableName, waitDbReady } from '../../database/knex'
 
 import LogDebug from '../../helper/logdebug'
@@ -49,7 +49,6 @@ const kq = {
     '00'
   ]
 }
-let mien, loai
 
 export const run = () => {
   return waitDbReady()
@@ -57,21 +56,14 @@ export const run = () => {
       _debug('start process')
       return conn(tableName.mien).select()
     })
-    .then(rs => {
-      mien = rs
-      return true
-    })
     .then(() => {
-      return conn(tableName.loai).select()
+      const id = 1
+      return conn(tableName.loai).where({id}).first()
     })
-    .then(rs => {
-      loai = rs
-      return true
+    .then(loai => {
+      return _processKQ(kq, loai, '10/02/2016')
     })
-    .then(() => {
-      return processKQ(kq, mien, loai)
-    })
-    .then(rs => {
-      _debug(JSON.stringify(rs, null, 4))
+    .catch(err => {
+      console.log(err.stack)
     })
 }

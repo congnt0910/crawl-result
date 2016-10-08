@@ -8,6 +8,10 @@ const getAll = () => {
   return conn(tableName.loai).select()
 }
 
+const getById = (id) => {
+  return conn(tableName.loai).where({ id }).first()
+}
+
 /***
  * Insert data into table `loai`
  * @param data array of object

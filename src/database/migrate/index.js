@@ -11,6 +11,17 @@ const MIEN_DATA = [
   {name: 'MIỀN TRUNG'},
   {name: 'MIỀN NAM'}
 ]
+const GIAI_DATA = [
+  {name: 'Đặc biệt'},
+  {name: 'Giải nhất'},
+  {name: 'Giải nhì'},
+  {name: 'Giải ba'},
+  {name: 'Giải tư'},
+  {name: 'Giải năm'},
+  {name: 'Giải sáu'},
+  {name: 'Giải bảy'},
+  {name: 'Giải tám'}
+]
 /***
  * Thông tin loại xổ số được lấy từ menu trang ketqua.net
  * @type {*[]}
@@ -197,7 +208,6 @@ const LOAI_DATA = [
  * @type {Array}
  */
 const LICH_MO_THUONG = [
-  // [Truyền thống] hay còn gọi là [Thủ đô]
   {
     mien: 'MIỀN BẮC',
     loai: 'Truyền Thống',
@@ -514,15 +524,32 @@ export const run = () => {
   return waitDbReady()
     .then(() => {
       console.log('start migrate')
-      return conn(tableName.mien)
-        .insert(MIEN_DATA, 'id') // insert and return id
-        .then(idList => {
-          // update id for each collection
-          return idList.forEach((id, index) => {
-            MIEN_DATA[index].id = id
-          })
+      // insert default data to table
+      return Promise.resolve()
+        .then(() => {
+          // insert into tbl GIAI
+          return conn(tableName.giai)
+            .insert(GIAI_DATA, 'id')
+            .then(idList => {
+              // update id for each collection
+              return idList.forEach((id, index) => {
+                GIAI_DATA[index].id = id
+              })
+            })
         })
         .then(() => {
+          // insert into tbl MIEN
+          return conn(tableName.mien)
+            .insert(MIEN_DATA, 'id') // insert and return id
+            .then(idList => {
+              // update id for each collection
+              return idList.forEach((id, index) => {
+                MIEN_DATA[index].id = id
+              })
+            })
+        })
+        .then(() => {
+          // insert into tbl LOAI
           // map mien
           const mienCollectionByName = _.groupBy(MIEN_DATA, 'name')
           const MAP_LICH_MO_THUONG_MIEN = _.groupBy(LICH_MO_THUONG_MIEN, 'mien')
@@ -574,6 +601,13 @@ export const run = () => {
           return conn(tableName.loai).select()
             .then(rs => {
               console.log('loai: \n', JSON.stringify(rs, null, 4))
+              return true
+            })
+        })
+        .then(() => {
+          return conn(tableName.giai).select()
+            .then(rs => {
+              console.log('giai: \n', JSON.stringify(rs, null, 4))
               return true
             })
         })

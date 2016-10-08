@@ -2,7 +2,7 @@
 // import { expect } from 'chai'
 import { processKQ } from '../index'
 import { conn, tableName } from '../../database/knex'
-const debug = require('debug')('processKQ')
+const debug = require('debug')('_processKQ')
 
 const kq = {
   'Đặc biệt': [
@@ -50,7 +50,7 @@ const kq = {
   ]
 }
 let mien, loai
-describe('test processKQ', () => {
+describe('test _processKQ', () => {
   before(() => {
     // get mien, loai
     return conn(tableName.mien).select()
