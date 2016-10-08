@@ -75,7 +75,7 @@ const dropDatabase = () => {
 
 /***
  * Connect to db
- * @returns {Promise.<connection>}
+ * @returns {connection} Knex object
  */
 const connect = () => {
   // TOTO: Research migrates
@@ -102,7 +102,7 @@ const connect = () => {
 
 /***
  * Truncates all table
- * @param conn - connection to db (knex)
+ * @param conn {Object} connection to db (knex object)
  * @returns {Promise.<boolean|error>}
  */
 const truncateAllTable = (conn) => {

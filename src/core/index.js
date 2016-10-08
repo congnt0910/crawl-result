@@ -2,8 +2,9 @@ import loaiModel from '../model/loai'
 import moment from 'moment'
 import schedule from 'node-schedule'
 import { doProcessScheduleCrawl } from './crawl'
+import config from '../config'
 
-/**
+/***
  * start main schedule
  */
 const run = () => {
@@ -20,29 +21,10 @@ const run = () => {
 }
 
 /***
- * Create schedule for category. Run only one time
- * @param cateInfo {Object}
- */
-const _createCateSchedule = (cateInfo) => {
-  const scanTimeBegin = moment(cateInfo.scanTimeBegin, 'HH:mm')
-  const scanTimeEnd = moment(cateInfo.scanTimeEnd, 'HH:mm')
-  if (!scanTimeBegin.isValid() || !scanTimeEnd.isValid()) {
-    _handleError(new Error(`scan time invalid: ${cateInfo.name} [ ${cateInfo.scanTimeBegin} - ${cateInfo.scanTimeEnd} ]`))
-    return
-  }
-  // cron job runs at 6:00 every day but cancellation this job in first run
-  const crawlSchedule = schedule.scheduleJob('0 6 * * *', () => {
-    doProcessScheduleCrawl(cateInfo)
-    crawlSchedule.cancel() // cancel job. it will run only once
-  })
-  console.log('The cate schedule has been initialized')
-}
-
-/**
  * Hàm xử lý cho main schedule
  * main schedule la schedule chay vao 1 gio trong ngay de xac dinh co bao nhieu loai xs mo thuong trong ngay
  * -> tao schedule cho tung loai xs
- * @returns {Promise.<TResult>}
+ * @returns {Promise}
  */
 const processMainSchedule = () => {
   let loai
@@ -54,6 +36,7 @@ const processMainSchedule = () => {
   } else {
     dayOfWeek += 1
   }
+  const date = now.toString(config.inputFormatDate)
   return Promise.resolve()
     .then(loaiModel.getAll)
     .then(res => {
@@ -65,13 +48,33 @@ const processMainSchedule = () => {
       })
       // create schedule each cate
       cateInDay.forEach(item => {
-        _createCateSchedule(item)
+        _createCateSchedule(date, item)
       })
     })
     .catch(err => {
       console.log(err.stack)
       _handleError(err)
     })
+}
+
+/***
+ * Create schedule for category. Run only one time
+ * @param date {string} date to crawl
+ * @param cateInfo {Object}
+ */
+const _createCateSchedule = (date, cateInfo) => {
+  const scanTimeBegin = moment(cateInfo.scanTimeBegin, 'HH:mm')
+  const scanTimeEnd = moment(cateInfo.scanTimeEnd, 'HH:mm')
+  if (!scanTimeBegin.isValid() || !scanTimeEnd.isValid()) {
+    _handleError(new Error(`scan time invalid: ${cateInfo.name} [ ${cateInfo.scanTimeBegin} - ${cateInfo.scanTimeEnd} ]`))
+    return
+  }
+  // cron job runs at 6:00 every day but cancellation this job in first run
+  const crawlSchedule = schedule.scheduleJob('0 6 * * *', () => {
+    doProcessScheduleCrawl(date, cateInfo)
+    crawlSchedule.cancel() // cancel job. it will run only once
+  })
+  console.log('The cate schedule has been initialized')
 }
 
 const _handleError = (errInfo) => {
@@ -82,6 +85,17 @@ const _handleError = (errInfo) => {
 // TODO: tao api de control tu ui
 
 export {
-  processMainSchedule,
-  run
+  /**
+   * start main schedule
+   * @function
+   */
+  run,
+  /**
+   * Hàm xử lý cho main schedule
+   * main schedule la schedule chay vao 1 gio trong ngay de xac dinh co bao nhieu loai xs mo thuong trong ngay
+   * -> tao schedule cho tung loai xs
+   * @function
+   * @returns {Promise}
+   */
+  processMainSchedule
 }

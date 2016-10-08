@@ -14,8 +14,8 @@ export class Api {
 
   /***
    * crawlByDay
-   * @param uri path url to crawl
-   * @param date MM/DD/YYYY
+   * @param uri {string} path url to crawl
+   * @param date {string} Ngay crawl data. Format: MM/DD/YYYY
    */
   crawlByDay (uri, date) {
     // check validate date
