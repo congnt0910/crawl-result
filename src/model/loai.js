@@ -7,7 +7,11 @@ import { conn, tableName } from '../database/knex'
 const getAll = () => {
   return conn(tableName.loai).select()
 }
-
+/***
+ * Get loai info by id
+ * @param id {int} Loai id
+ * @returns {*}
+ */
 const getById = (id) => {
   return conn(tableName.loai).where({ id }).first()
 }
@@ -23,5 +27,6 @@ const insert = (data) => {
 
 export default {
   getAll,
+  getById,
   insert
 }
