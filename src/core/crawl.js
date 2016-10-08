@@ -59,6 +59,13 @@ const scan = (date, loaiId) => {
     })
 }
 
+/***
+ * Func create schedule run crawl data every 5 minutes
+ * @param cateInfo
+ */
+const doProcessScheduleCrawl = (cateInfo) => {
+
+}
 /**
  * Scan module. Crawl data online
  * @exports core/scan
@@ -80,5 +87,10 @@ export {
    * @returns {Promise.<TResult>}
    * @private
    */
-  _processKQ
+  _processKQ,
+  /**
+   * func create schedule run crawl data every 5 minute
+   * @function
+   */
+  doProcessScheduleCrawl
 }

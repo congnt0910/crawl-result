@@ -20,7 +20,10 @@ debug('shit')
 // run()
 
 // ----------------------------------------------------------
-
+import moment from 'moment'
+const tmp = moment('28:15', 'HH:mm')
+console.log(tmp.toString())
+console.log(tmp.isValid())
 // ----------------------------------------------------------
 // // test node schedule
 // import schedule, { RecurrenceRule } from 'node-schedule'
