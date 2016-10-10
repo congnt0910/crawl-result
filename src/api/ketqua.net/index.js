@@ -5,6 +5,9 @@ import config from '../../config'
 
 const debug = require('debug')('ketquanet')
 
+/**
+ *  Api crawl data from ketqua_net
+ */
 export class Api {
   constructor (props) {
     this.outputFormatDate = 'DD-MM-YYYY' // format date use to crawl process
@@ -12,7 +15,7 @@ export class Api {
     this.server = 'http://ketqua.net'
   }
 
-  /***
+  /**
    * crawlByDay
    * @param uri {string} path url to crawl
    * @param date {string} Ngay crawl data. Format: MM/DD/YYYY

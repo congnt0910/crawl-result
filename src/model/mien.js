@@ -10,7 +10,7 @@ const getAll = () => {
 
 /***
  *
- * @param data array of object
+ * @param data {Object[]} array of object
  * @returns {Promise.<error|Object>}
  */
 const insert = (data) => {

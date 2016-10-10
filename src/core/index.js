@@ -69,8 +69,8 @@ const _createCateSchedule = (date, cateInfo) => {
     _handleError(new Error(`scan time invalid: ${cateInfo.name} [ ${cateInfo.scanTimeBegin} - ${cateInfo.scanTimeEnd} ]`))
     return
   }
-  // cron job runs at 6:00 every day but cancellation this job in first run
-  const crawlSchedule = schedule.scheduleJob('0 6 * * *', () => {
+  // cron job runs at scanTimeBegin every day but cancellation this job in first run
+  const crawlSchedule = schedule.scheduleJob(`${scanTimeBegin.minutes()} ${scanTimeBegin.hours()} * * *`, () => {
     doProcessScheduleCrawl(date, cateInfo)
     crawlSchedule.cancel() // cancel job. it will run only once
   })
