@@ -71,6 +71,7 @@ const _createCateSchedule = (date, cateInfo) => {
   }
   // cron job runs at scanTimeBegin every day but cancellation this job in first run
   const crawlSchedule = schedule.scheduleJob(`${scanTimeBegin.minutes()} ${scanTimeBegin.hours()} * * *`, () => {
+    console.log('The scheduled cate task ran: ', cateInfo.name)
     doProcessScheduleCrawl(date, cateInfo)
     crawlSchedule.cancel() // cancel job. it will run only once
   })

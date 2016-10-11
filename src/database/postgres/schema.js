@@ -21,7 +21,7 @@ const createSchema = (tableName, conn) => {
           if (exist) return true
           // create table giai
           return conn.schema.createTable(tableName.giai, (table) => {
-            table.increments('id').primary()
+            table.integer('id').primary()
             table.string('name', 255).unique().collate('utf8_unicode_ci')
             table.timestamps(true, true)
           })
@@ -62,6 +62,23 @@ const createSchema = (tableName, conn) => {
             table.integer('giaiId')
             table.foreign('loaiId').references('loai.id')
             table.foreign('giaiId').references('giai.id')
+            table.timestamps(true, true)
+          })
+        })
+    })
+    .then(() => {
+      return conn.schema.hasTable(tableName.configCrawl)
+        .then(exist => {
+          // do no thing if exist
+          if (exist) return true
+          // create table ket qua
+          return conn.schema.createTable(tableName.configCrawl, (table) => {
+            table.increments('id').primary()
+            table.string('url', 255)
+            table.string('code', 255)
+            table.string('key', 255)
+            table.integer('loaiId')
+            table.unique(['loaiId', 'key'])
             table.timestamps(true, true)
           })
         })

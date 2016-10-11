@@ -2,7 +2,7 @@ import moment from 'moment'
 import cheerio from 'cheerio'
 import HttpRequest from '../../helper/httpRequest'
 import config from '../../config'
-
+import _ from 'lodash'
 const debug = require('debug')('ketquanet')
 
 /**
@@ -13,6 +13,8 @@ export class Api {
     this.outputFormatDate = 'DD-MM-YYYY' // format date use to crawl process
     this.request = new HttpRequest()
     this.server = 'http://ketqua.net'
+    this.curLen = 0
+    this.finishStatus = false
   }
 
   /**
@@ -74,6 +76,53 @@ export class Api {
         })
         debug(JSON.stringify(data, null, 4))
         return data // crawl data complete
+      })
+  }
+
+  reloadResult (targetCode) {
+    const reloadUrl = `${this.server}/pre_loads/kq-${targetCode}.raw?t=${Date.now()}`
+    return this.request.get(reloadUrl)
+      .then(res => {
+        const resultParts = res.split(';')
+        const currentTimeStamp = Date.now()
+        const loadedTimeStemp = parseInt(resultParts[0] + '000')
+        const difference = currentTimeStamp - loadedTimeStemp
+        if (difference < 0 || difference > 5 * 60 * 1000) {
+          return -2
+        }
+        const parts = res.split(';')
+        const bareDigitString = parts.slice(1, parts.length).join('').replace(/[^0-9*]/g, '')
+        if (this.curLen < bareDigitString.length) {
+          this.curLen = bareDigitString.length
+        } else {
+          console.log('not long enough')
+          return -1
+        }
+        const lotoList = {}
+        const len = resultParts.length
+
+        _.each(resultParts, (curPrize, i) => {
+          const prizeIndex = len - i - 1
+          if (curPrize.length === 0) {
+            return
+          }
+          const pizeParts = curPrize.split('-')
+          _.each(pizeParts, (currentPrize) => {
+            if (currentPrize.length === 0) {
+              return
+            }
+            if (/^\**$/.test(currentPrize)) {
+              return
+            }
+            if (/^[0-9]*$/.test(currentPrize)) {
+              lotoList[prizeIndex] = lotoList[prizeIndex] || []
+              lotoList[prizeIndex].push(currentPrize)
+              if (currentPrize === 0) {
+                this.finishStatus = true
+              }
+            }
+          })
+        })
       })
   }
 }
