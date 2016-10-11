@@ -1,7 +1,7 @@
 import loaiModel from '../model/loai'
 import moment from 'moment'
 import schedule from 'node-schedule'
-import { doProcessScheduleCrawl } from './crawl'
+import Crawl from './crawl'
 import config from '../config'
 
 /***
@@ -72,7 +72,8 @@ const _createCateSchedule = (date, cateInfo) => {
   // cron job runs at scanTimeBegin every day but cancellation this job in first run
   const crawlSchedule = schedule.scheduleJob(`${scanTimeBegin.minutes()} ${scanTimeBegin.hours()} * * *`, () => {
     console.log('The scheduled cate task ran: ', cateInfo.name)
-    doProcessScheduleCrawl(date, cateInfo)
+    const c = new Crawl(date, cateInfo)
+    c.createScheduleCrawl()
     crawlSchedule.cancel() // cancel job. it will run only once
   })
   console.log('The cate schedule has been initialized')

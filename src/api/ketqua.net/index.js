@@ -9,7 +9,7 @@ const debug = require('debug')('ketquanet')
  *  Api crawl data from ketqua_net
  */
 export class Api {
-  constructor (props) {
+  constructor () {
     this.outputFormatDate = 'DD-MM-YYYY' // format date use to crawl process
     this.request = new HttpRequest()
     this.server = 'http://ketqua.net'

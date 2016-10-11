@@ -15,15 +15,13 @@ export default class Crawl {
     this.cateInfo = cateInfo
     this.finalData = {}
     this.crawlSchedule = null
-    // create schedule
-    this._createScheduleCrawl()
   }
 
   /**
    * Func create schedule run crawl data every 5 minutes
    * @private
    */
-  _createScheduleCrawl = () => {
+  createScheduleCrawl = () => {
     this.crawlSchedule = schedule.scheduleJob('*/5 * * * *', () => {
       console.log('The scheduled crawl task ran: ', this.cateInfo.name)
       return this._scan()
