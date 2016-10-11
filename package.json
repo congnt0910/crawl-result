@@ -7,7 +7,7 @@
     "start": "set NODE_ENV=DEV&&nodemon index.js --exec babel-node --presets es2015,stage-2",
     "nodemon": "nodemon debugcode.js --exec babel-node --presets es2015,stage-2",
     "testHttpHelper": "set NODE_ENV=TEST&&mocha --compilers js:babel-register src/helper/__test__/**/*test.js",
-    "testCrawl": "set NODE_ENV=TEST&&mocha --compilers js:babel-register src/api/__test__/**/*test.js",
+    "testCrawlApi": "set NODE_ENV=TEST&&mocha --compilers js:babel-register src/api/__test__/**/*test.js",
     "gulp": "./node_modules/.bin/gulp",
     "eslint": "./node_modules/.bin/eslint --config .eslintrc src/**/*.js"
   },

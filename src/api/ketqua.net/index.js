@@ -4,6 +4,18 @@ import HttpRequest from '../../helper/httpRequest'
 import config from '../../config'
 import _ from 'lodash'
 const debug = require('debug')('ketquanet')
+const GIAI_DATA = [
+  { id: 0, name: 'Đặc biệt' },
+  { id: 1, name: 'Giải nhất' },
+  { id: 2, name: 'Giải nhì' },
+  { id: 3, name: 'Giải ba' },
+  { id: 4, name: 'Giải tư' },
+  { id: 5, name: 'Giải năm' },
+  { id: 6, name: 'Giải sáu' },
+  { id: 7, name: 'Giải bảy' },
+  { id: 8, name: 'Giải tám' }
+]
+const giaiMap = _.groupBy(GIAI_DATA, 'name')
 
 /**
  *  Api crawl data from ketqua_net
@@ -70,10 +82,15 @@ export class Api {
           if (tmpGiai !== '') giai = tmpGiai
           $tds.get().forEach(function (td) {
             const $td = $(td)
-            data[giai] = data[giai] || []
-            data[giai].push($td.text().trim())
+            const idGiai = giaiMap[giai][0].id
+            data[idGiai] = data[idGiai] || []
+            data[idGiai].push($td.text().trim())
           })
         })
+        const idGiai = giaiMap['Đặc biệt'][0].id
+        if (data[idGiai].length > 0) {
+          this.finishStatus = true
+        }
         debug(JSON.stringify(data, null, 4))
         return data // crawl data complete
       })
@@ -100,8 +117,8 @@ export class Api {
         }
         const lotoList = {}
         const len = resultParts.length
-
         _.each(resultParts, (curPrize, i) => {
+          if (i === 0) return
           const prizeIndex = len - i - 1
           if (curPrize.length === 0) {
             return
@@ -123,6 +140,7 @@ export class Api {
             }
           })
         })
+        return lotoList
       })
   }
 }
