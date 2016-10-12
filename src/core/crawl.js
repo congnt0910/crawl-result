@@ -45,10 +45,26 @@ export default class Crawl {
   /**
    * Func create schedule run crawl data every 5 minutes
    */
-  createScheduleCrawl = () => {
+  createScheduleCrawl = (runNow = false) => {
+    if (runNow) {
+      // wait load config
+      return new Promise(resolve => {
+        const loop = () => {
+          if (this.config) {
+            return resolve()
+          }
+          setTimeout(loop, 10)
+        }
+        loop()
+      })
+        .then(() => {
+          debug(`   [${this.cateInfo.name}] The task ran on ${Date()}`)
+          return this._scan()
+        })
+    }
     this.crawlSchedule = schedule.scheduleJob('*/5 * * * *', () => {
-      debug(`   [${this.cateInfo.name}]The scheduled crawl task ran on ${Date()}`)
-      return this._scan()
+      debug(`   [${this.cateInfo.name}] The scheduled crawl task ran on ${Date()}`)
+      this._scan()
     })
     debug(`[${this.cateInfo.name}] The crawl schedule has been initialized on ${Date()}`)
   }
@@ -89,6 +105,11 @@ export default class Crawl {
       })
   }
 
+  /**
+   * Update result to final data
+   * @param res {Object}
+   * @private
+   */
   _compareData (res) {
     _.each(res, (val, key) => {
       const tmp = this.finalData[key] = this.finalData[key] || []
@@ -100,12 +121,18 @@ export default class Crawl {
     })
   }
 
+  /**
+   * Check & stop schedule if done
+   * @param isComplete
+   * @returns {boolean}
+   * @private
+   */
   _checkStop (isComplete) {
     const now = moment()
     const end = moment(this.cateInfo.scanTimeEnd, 'HH:mm')
     if (now >= end || isComplete) {
       debug(`   [${this.cateInfo.name}] The scheduled crawl task stopped on ${Date()}`)
-      this.crawlSchedule.cancel()
+      this.crawlSchedule && this.crawlSchedule.cancel()
     }
     return true
   }

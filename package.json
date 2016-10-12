@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon src/bin/index.js --exec babel-node --presets es2015,stage-2",
+    "manual": "nodemon src/bin/manual.js --exec babel-node --presets es2015,stage-2",
     "migrate": "nodemon src/bin/migrate.js --exec babel-node --presets es2015,stage-2",
     "nodemon": "nodemon debugcode.js --exec babel-node --presets es2015,stage-2",
     "testHttpHelper": "set NODE_ENV=TEST&&mocha --compilers js:babel-register src/helper/__test__/**/*test.js",

@@ -247,3 +247,12 @@ debug('shit')
 // })
 //
 // console.log(tmp)
+import { ketquaModel } from './src/model'
+
+ketquaModel.getAll()
+  .then(res => {
+    console.log(JSON.stringify(res, null, 4))
+  })
+  .catch(err => {
+    console.error(err.stack)
+  })

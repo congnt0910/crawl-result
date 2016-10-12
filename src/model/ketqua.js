@@ -2,6 +2,10 @@ import { conn, tableName } from '../database/knex'
 import config from '../config'
 import moment from 'moment'
 
+const getAll = () => {
+  return conn(tableName.ketqua).select()
+}
+
 /***
  * Get all KQ info by date
  * @param date string
@@ -26,6 +30,7 @@ const insert = (data) => {
 }
 
 export default {
+  getAll,
   getAllByDay,
   insert
 }
