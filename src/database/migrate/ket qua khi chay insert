@@ -1,33 +1,35 @@
-"C:\Program Files (x86)\JetBrains\WebStorm 2016.1\bin\runnerw.exe" "C:\Program Files\nodejs\node.exe" "C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js" run-script nodemon
+/usr/local/bin/node /usr/local/lib/node_modules/npm/bin/npm-cli.js run-script nodemon
 
-> xs@1.0.0 nodemon D:\PROJECT\NodeJsNtc\crawler
+> xs@1.0.0 nodemon /Users/congnt/PROJECT/nodejs-ntc/crawler
 > nodemon debugcode.js --exec babel-node --presets es2015,stage-2
 
-[nodemon] 1.10.2
+[nodemon] 1.11.0
 [nodemon] to restart at any time, enter `rs`
 [nodemon] watching: *.*
 [nodemon] starting `babel-node debugcode.js --presets es2015,stage-2`
-db ready
+  TEST shit +0ms
+  DATABASE Drop data base success +392ms
+  DATABASE db ready +437ms
 start migrate
 mien:
  [
     {
         "id": 1,
         "name": "MIỀN BẮC",
-        "created_at": "2016-10-05T11:34:56.487Z",
-        "updated_at": "2016-10-05T11:34:56.487Z"
+        "created_at": "2016-10-11T16:21:11.110Z",
+        "updated_at": "2016-10-11T16:21:11.110Z"
     },
     {
         "id": 2,
         "name": "MIỀN TRUNG",
-        "created_at": "2016-10-05T11:34:56.487Z",
-        "updated_at": "2016-10-05T11:34:56.487Z"
+        "created_at": "2016-10-11T16:21:11.110Z",
+        "updated_at": "2016-10-11T16:21:11.110Z"
     },
     {
         "id": 3,
         "name": "MIỀN NAM",
-        "created_at": "2016-10-05T11:34:56.487Z",
-        "updated_at": "2016-10-05T11:34:56.487Z"
+        "created_at": "2016-10-11T16:21:11.110Z",
+        "updated_at": "2016-10-11T16:21:11.110Z"
     }
 ]
 loai:
@@ -39,10 +41,10 @@ loai:
         "scanTimeBegin": "18:15",
         "scanTimeEnd": "18:45",
         "useScanTime": false,
-        "url": "/xo-so-truyen-thong.php",
+        "url": null,
         "mienId": 1,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 2,
@@ -51,10 +53,10 @@ loai:
         "scanTimeBegin": "18:05",
         "scanTimeEnd": "18:35",
         "useScanTime": false,
-        "url": "/xo-so-dien-toan-123.php",
+        "url": null,
         "mienId": 1,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 3,
@@ -63,10 +65,10 @@ loai:
         "scanTimeBegin": "18:05",
         "scanTimeEnd": "18:35",
         "useScanTime": false,
-        "url": "/xo-so-dien-toan-6x36.php",
+        "url": null,
         "mienId": 1,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 4,
@@ -75,10 +77,10 @@ loai:
         "scanTimeBegin": "18:05",
         "scanTimeEnd": "18:35",
         "useScanTime": false,
-        "url": "/xo-so-than-tai.php",
+        "url": null,
         "mienId": 1,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 5,
@@ -87,10 +89,10 @@ loai:
         "scanTimeBegin": "17:15",
         "scanTimeEnd": "17:45",
         "useScanTime": false,
-        "url": "/xo-so-binh-dinh.php",
+        "url": null,
         "mienId": 2,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 6,
@@ -99,10 +101,10 @@ loai:
         "scanTimeBegin": "17:15",
         "scanTimeEnd": "17:50",
         "useScanTime": false,
-        "url": "/xo-so-da-nang.php",
+        "url": null,
         "mienId": 2,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 7,
@@ -111,10 +113,10 @@ loai:
         "scanTimeBegin": "17:15",
         "scanTimeEnd": "17:45",
         "useScanTime": false,
-        "url": "/xo-so-dac-lac.php",
+        "url": null,
         "mienId": 2,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 8,
@@ -123,10 +125,10 @@ loai:
         "scanTimeBegin": "17:15",
         "scanTimeEnd": "17:45",
         "useScanTime": false,
-        "url": "/xo-so-dac-nong.php",
+        "url": null,
         "mienId": 2,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 9,
@@ -135,10 +137,10 @@ loai:
         "scanTimeBegin": "17:15",
         "scanTimeEnd": "17:45",
         "useScanTime": false,
-        "url": "/xo-so-gia-lai.php",
+        "url": null,
         "mienId": 2,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 10,
@@ -147,10 +149,10 @@ loai:
         "scanTimeBegin": "17:15",
         "scanTimeEnd": "17:50",
         "useScanTime": false,
-        "url": "/xo-so-khanh-hoa.php",
+        "url": null,
         "mienId": 2,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 11,
@@ -159,10 +161,10 @@ loai:
         "scanTimeBegin": "17:15",
         "scanTimeEnd": "17:45",
         "useScanTime": false,
-        "url": "/xo-so-kon-tum.php",
+        "url": null,
         "mienId": 2,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 12,
@@ -171,10 +173,10 @@ loai:
         "scanTimeBegin": "17:15",
         "scanTimeEnd": "17:45",
         "useScanTime": false,
-        "url": "/xo-so-ninh-thuan.php",
+        "url": null,
         "mienId": 2,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 13,
@@ -183,10 +185,10 @@ loai:
         "scanTimeBegin": "17:15",
         "scanTimeEnd": "17:45",
         "useScanTime": false,
-        "url": "/xo-so-phu-yen.php",
+        "url": null,
         "mienId": 2,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 14,
@@ -195,10 +197,10 @@ loai:
         "scanTimeBegin": "17:15",
         "scanTimeEnd": "17:45",
         "useScanTime": false,
-        "url": "/xo-so-quang-binh.php",
+        "url": null,
         "mienId": 2,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 15,
@@ -207,10 +209,10 @@ loai:
         "scanTimeBegin": "17:15",
         "scanTimeEnd": "17:45",
         "useScanTime": false,
-        "url": "/xo-so-quang-nam.php",
+        "url": null,
         "mienId": 2,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 16,
@@ -219,10 +221,10 @@ loai:
         "scanTimeBegin": "17:15",
         "scanTimeEnd": "17:45",
         "useScanTime": false,
-        "url": "/xo-so-quang-ngai.php",
+        "url": null,
         "mienId": 2,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 17,
@@ -231,10 +233,10 @@ loai:
         "scanTimeBegin": "17:15",
         "scanTimeEnd": "17:45",
         "useScanTime": false,
-        "url": "/xo-so-quang-tri.php",
+        "url": null,
         "mienId": 2,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 18,
@@ -243,10 +245,10 @@ loai:
         "scanTimeBegin": "17:15",
         "scanTimeEnd": "17:45",
         "useScanTime": false,
-        "url": "/xo-so-thua-thien-hue.php",
+        "url": null,
         "mienId": 2,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 19,
@@ -255,10 +257,10 @@ loai:
         "scanTimeBegin": "16:15",
         "scanTimeEnd": "16:45",
         "useScanTime": false,
-        "url": "/xo-so-an-giang.php",
+        "url": null,
         "mienId": 3,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 20,
@@ -267,10 +269,10 @@ loai:
         "scanTimeBegin": "16:15",
         "scanTimeEnd": "16:45",
         "useScanTime": false,
-        "url": "/xo-so-bac-lieu.php",
+        "url": null,
         "mienId": 3,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 21,
@@ -279,10 +281,10 @@ loai:
         "scanTimeBegin": "16:15",
         "scanTimeEnd": "16:45",
         "useScanTime": false,
-        "url": "/xo-so-ben-tre.php",
+        "url": null,
         "mienId": 3,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 22,
@@ -291,10 +293,10 @@ loai:
         "scanTimeBegin": "16:15",
         "scanTimeEnd": "16:45",
         "useScanTime": false,
-        "url": "/xo-so-binh-duong.php",
+        "url": null,
         "mienId": 3,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 23,
@@ -303,10 +305,10 @@ loai:
         "scanTimeBegin": "16:15",
         "scanTimeEnd": "16:45",
         "useScanTime": false,
-        "url": "/xo-so-binh-phuoc.php",
+        "url": null,
         "mienId": 3,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 24,
@@ -315,10 +317,10 @@ loai:
         "scanTimeBegin": "16:15",
         "scanTimeEnd": "16:45",
         "useScanTime": false,
-        "url": "/xo-so-binh-thuan.php",
+        "url": null,
         "mienId": 3,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 25,
@@ -327,10 +329,10 @@ loai:
         "scanTimeBegin": "16:15",
         "scanTimeEnd": "16:45",
         "useScanTime": false,
-        "url": "/xo-so-ca-mau.php",
+        "url": null,
         "mienId": 3,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 26,
@@ -339,10 +341,10 @@ loai:
         "scanTimeBegin": "16:15",
         "scanTimeEnd": "16:50",
         "useScanTime": false,
-        "url": "/xo-so-can-tho.php",
+        "url": null,
         "mienId": 3,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 27,
@@ -351,10 +353,10 @@ loai:
         "scanTimeBegin": "16:00",
         "scanTimeEnd": "18:45",
         "useScanTime": false,
-        "url": "/xo-so-da-lat.php",
+        "url": null,
         "mienId": 3,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 28,
@@ -363,10 +365,10 @@ loai:
         "scanTimeBegin": "16:15",
         "scanTimeEnd": "16:50",
         "useScanTime": false,
-        "url": "/xo-so-dong-nai.php",
+        "url": null,
         "mienId": 3,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 29,
@@ -375,10 +377,10 @@ loai:
         "scanTimeBegin": "16:15",
         "scanTimeEnd": "16:45",
         "useScanTime": false,
-        "url": "/xo-so-dong-thap.php",
+        "url": null,
         "mienId": 3,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 30,
@@ -387,10 +389,10 @@ loai:
         "scanTimeBegin": "16:15",
         "scanTimeEnd": "16:45",
         "useScanTime": false,
-        "url": "/xo-so-hau-giang.php",
+        "url": null,
         "mienId": 3,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 31,
@@ -399,10 +401,10 @@ loai:
         "scanTimeBegin": "16:15",
         "scanTimeEnd": "16:45",
         "useScanTime": false,
-        "url": "/xo-so-ho-chi-minh.php",
+        "url": null,
         "mienId": 3,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 32,
@@ -411,10 +413,10 @@ loai:
         "scanTimeBegin": "16:15",
         "scanTimeEnd": "16:45",
         "useScanTime": false,
-        "url": "/xo-so-kien-giang.php",
+        "url": null,
         "mienId": 3,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 33,
@@ -423,10 +425,10 @@ loai:
         "scanTimeBegin": "16:15",
         "scanTimeEnd": "16:45",
         "useScanTime": false,
-        "url": "/xo-so-long-an.php",
+        "url": null,
         "mienId": 3,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 34,
@@ -435,10 +437,10 @@ loai:
         "scanTimeBegin": "16:15",
         "scanTimeEnd": "16:50",
         "useScanTime": false,
-        "url": "/xo-so-soc-trang.php",
+        "url": null,
         "mienId": 3,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 35,
@@ -447,10 +449,10 @@ loai:
         "scanTimeBegin": "16:15",
         "scanTimeEnd": "16:45",
         "useScanTime": false,
-        "url": "/xo-so-tay-ninh.php",
+        "url": null,
         "mienId": 3,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 36,
@@ -459,10 +461,10 @@ loai:
         "scanTimeBegin": "16:15",
         "scanTimeEnd": "16:45",
         "useScanTime": false,
-        "url": "/xo-so-tien-giang.php",
+        "url": null,
         "mienId": 3,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 37,
@@ -471,10 +473,10 @@ loai:
         "scanTimeBegin": "16:15",
         "scanTimeEnd": "16:45",
         "useScanTime": false,
-        "url": "/xo-so-tra-vinh.php",
+        "url": null,
         "mienId": 3,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 38,
@@ -483,10 +485,10 @@ loai:
         "scanTimeBegin": "16:15",
         "scanTimeEnd": "16:45",
         "useScanTime": false,
-        "url": "/xo-so-vinh-long.php",
+        "url": null,
         "mienId": 3,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
     },
     {
         "id": 39,
@@ -495,11 +497,422 @@ loai:
         "scanTimeBegin": "16:15",
         "scanTimeEnd": "16:45",
         "useScanTime": false,
-        "url": "/xo-so-vung-tau.php",
+        "url": null,
         "mienId": 3,
-        "created_at": "2016-10-05T11:34:56.514Z",
-        "updated_at": "2016-10-05T11:34:56.514Z"
+        "created_at": "2016-10-11T16:21:11.117Z",
+        "updated_at": "2016-10-11T16:21:11.117Z"
+    }
+]
+giai:
+ [
+    {
+        "id": 0,
+        "name": "Đặc biệt",
+        "created_at": "2016-10-11T16:21:11.107Z",
+        "updated_at": "2016-10-11T16:21:11.107Z"
+    },
+    {
+        "id": 1,
+        "name": "Giải nhất",
+        "created_at": "2016-10-11T16:21:11.107Z",
+        "updated_at": "2016-10-11T16:21:11.107Z"
+    },
+    {
+        "id": 2,
+        "name": "Giải nhì",
+        "created_at": "2016-10-11T16:21:11.107Z",
+        "updated_at": "2016-10-11T16:21:11.107Z"
+    },
+    {
+        "id": 3,
+        "name": "Giải ba",
+        "created_at": "2016-10-11T16:21:11.107Z",
+        "updated_at": "2016-10-11T16:21:11.107Z"
+    },
+    {
+        "id": 4,
+        "name": "Giải tư",
+        "created_at": "2016-10-11T16:21:11.107Z",
+        "updated_at": "2016-10-11T16:21:11.107Z"
+    },
+    {
+        "id": 5,
+        "name": "Giải năm",
+        "created_at": "2016-10-11T16:21:11.107Z",
+        "updated_at": "2016-10-11T16:21:11.107Z"
+    },
+    {
+        "id": 6,
+        "name": "Giải sáu",
+        "created_at": "2016-10-11T16:21:11.107Z",
+        "updated_at": "2016-10-11T16:21:11.107Z"
+    },
+    {
+        "id": 7,
+        "name": "Giải bảy",
+        "created_at": "2016-10-11T16:21:11.107Z",
+        "updated_at": "2016-10-11T16:21:11.107Z"
+    },
+    {
+        "id": 8,
+        "name": "Giải tám",
+        "created_at": "2016-10-11T16:21:11.107Z",
+        "updated_at": "2016-10-11T16:21:11.107Z"
+    }
+]
+configCrawl:
+ [
+    {
+        "id": 1,
+        "url": "/xo-so-truyen-thong.php",
+        "code": "mb",
+        "key": "ketqua.net",
+        "loaiId": 1,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 2,
+        "url": "/xo-so-dien-toan-123.php",
+        "code": "123",
+        "key": "ketqua.net",
+        "loaiId": 2,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 3,
+        "url": "/xo-so-dien-toan-6x36.php",
+        "code": "636",
+        "key": "ketqua.net",
+        "loaiId": 3,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 4,
+        "url": "/xo-so-than-tai.php",
+        "code": "tt4",
+        "key": "ketqua.net",
+        "loaiId": 4,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 5,
+        "url": "/xo-so-binh-dinh.php",
+        "code": "bdi",
+        "key": "ketqua.net",
+        "loaiId": 5,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 6,
+        "url": "/xo-so-da-nang.php",
+        "code": "dna",
+        "key": "ketqua.net",
+        "loaiId": 6,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 7,
+        "url": "/xo-so-dac-lac.php",
+        "code": "dlc",
+        "key": "ketqua.net",
+        "loaiId": 7,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 8,
+        "url": "/xo-so-dac-nong.php",
+        "code": "dno",
+        "key": "ketqua.net",
+        "loaiId": 8,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 9,
+        "url": "/xo-so-gia-lai.php",
+        "code": "gl",
+        "key": "ketqua.net",
+        "loaiId": 9,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 10,
+        "url": "/xo-so-khanh-hoa.php",
+        "code": "kh",
+        "key": "ketqua.net",
+        "loaiId": 10,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 11,
+        "url": "/xo-so-kon-tum.php",
+        "code": "kt",
+        "key": "ketqua.net",
+        "loaiId": 11,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 12,
+        "url": "/xo-so-ninh-thuan.php",
+        "code": "nt",
+        "key": "ketqua.net",
+        "loaiId": 12,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 13,
+        "url": "/xo-so-phu-yen.php",
+        "code": "py",
+        "key": "ketqua.net",
+        "loaiId": 13,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 14,
+        "url": "/xo-so-quang-binh.php",
+        "code": "qb",
+        "key": "ketqua.net",
+        "loaiId": 14,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 15,
+        "url": "/xo-so-quang-nam.php",
+        "code": "qna",
+        "key": "ketqua.net",
+        "loaiId": 15,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 16,
+        "url": "/xo-so-quang-ngai.php",
+        "code": "qng",
+        "key": "ketqua.net",
+        "loaiId": 16,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 17,
+        "url": "/xo-so-quang-tri.php",
+        "code": "qt",
+        "key": "ketqua.net",
+        "loaiId": 17,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 18,
+        "url": "/xo-so-thua-thien-hue.php",
+        "code": "tth",
+        "key": "ketqua.net",
+        "loaiId": 18,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 19,
+        "url": "/xo-so-an-giang.php",
+        "code": "ag",
+        "key": "ketqua.net",
+        "loaiId": 19,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 20,
+        "url": "/xo-so-bac-lieu.php",
+        "code": "bl",
+        "key": "ketqua.net",
+        "loaiId": 20,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 21,
+        "url": "/xo-so-ben-tre.php",
+        "code": "btr",
+        "key": "ketqua.net",
+        "loaiId": 21,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 22,
+        "url": "/xo-so-binh-duong.php",
+        "code": "bdu",
+        "key": "ketqua.net",
+        "loaiId": 22,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 23,
+        "url": "/xo-so-binh-phuoc.php",
+        "code": "bp",
+        "key": "ketqua.net",
+        "loaiId": 23,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 24,
+        "url": "/xo-so-binh-thuan.php",
+        "code": "bth",
+        "key": "ketqua.net",
+        "loaiId": 24,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 25,
+        "url": "/xo-so-ca-mau.php",
+        "code": "cm",
+        "key": "ketqua.net",
+        "loaiId": 25,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 26,
+        "url": "/xo-so-can-tho.php",
+        "code": "ct",
+        "key": "ketqua.net",
+        "loaiId": 26,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 27,
+        "url": "/xo-so-da-lat.php",
+        "code": "dlt",
+        "key": "ketqua.net",
+        "loaiId": 27,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 28,
+        "url": "/xo-so-dong-nai.php",
+        "code": "dni",
+        "key": "ketqua.net",
+        "loaiId": 28,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 29,
+        "url": "/xo-so-dong-thap.php",
+        "code": "dt",
+        "key": "ketqua.net",
+        "loaiId": 29,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 30,
+        "url": "/xo-so-hau-giang.php",
+        "code": "hg",
+        "key": "ketqua.net",
+        "loaiId": 30,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 31,
+        "url": "/xo-so-ho-chi-minh.php",
+        "code": "hcm",
+        "key": "ketqua.net",
+        "loaiId": 31,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 32,
+        "url": "/xo-so-kien-giang.php",
+        "code": "kg",
+        "key": "ketqua.net",
+        "loaiId": 32,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 33,
+        "url": "/xo-so-long-an.php",
+        "code": "la",
+        "key": "ketqua.net",
+        "loaiId": 33,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 34,
+        "url": "/xo-so-soc-trang.php",
+        "code": "st",
+        "key": "ketqua.net",
+        "loaiId": 34,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 35,
+        "url": "/xo-so-tay-ninh.php",
+        "code": "tn",
+        "key": "ketqua.net",
+        "loaiId": 35,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 36,
+        "url": "/xo-so-tien-giang.php",
+        "code": "tg",
+        "key": "ketqua.net",
+        "loaiId": 36,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 37,
+        "url": "/xo-so-tra-vinh.php",
+        "code": "",
+        "key": "ketqua.net",
+        "loaiId": 37,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 38,
+        "url": "/xo-so-vinh-long.php",
+        "code": "tv",
+        "key": "ketqua.net",
+        "loaiId": 38,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
+    },
+    {
+        "id": 39,
+        "url": "/xo-so-vung-tau.php",
+        "code": "vt",
+        "key": "ketqua.net",
+        "loaiId": 39,
+        "created_at": "2016-10-11T16:21:11.124Z",
+        "updated_at": "2016-10-11T16:21:11.124Z"
     }
 ]
 
-Process finished with exit code -1073741510 (0xC000013A: interrupted by Ctrl+C)
+Process finished with exit code 130

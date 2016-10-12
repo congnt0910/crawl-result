@@ -7,20 +7,20 @@ import {
   from '../knex'
 
 const MIEN_DATA = [
-  {name: 'MIỀN BẮC'},
-  {name: 'MIỀN TRUNG'},
-  {name: 'MIỀN NAM'}
+  { name: 'MIỀN BẮC' },
+  { name: 'MIỀN TRUNG' },
+  { name: 'MIỀN NAM' }
 ]
 const GIAI_DATA = [
-  {name: 'Đặc biệt'},
-  {name: 'Giải nhất'},
-  {name: 'Giải nhì'},
-  {name: 'Giải ba'},
-  {name: 'Giải tư'},
-  {name: 'Giải năm'},
-  {name: 'Giải sáu'},
-  {name: 'Giải bảy'},
-  {name: 'Giải tám'}
+  { id: 0, name: 'Đặc biệt' },
+  { id: 1, name: 'Giải nhất' },
+  { id: 2, name: 'Giải nhì' },
+  { id: 3, name: 'Giải ba' },
+  { id: 4, name: 'Giải tư' },
+  { id: 5, name: 'Giải năm' },
+  { id: 6, name: 'Giải sáu' },
+  { id: 7, name: 'Giải bảy' },
+  { id: 8, name: 'Giải tám' }
 ]
 /***
  * Thông tin loại xổ số được lấy từ menu trang ketqua.net
@@ -127,7 +127,7 @@ const LOAI_DATA = [
     name: 'Bạc Liêu',
     url: '/xo-so-bac-lieu.php'
   },
-  {mien: 'MIỀN NAM', name: 'Bến Tre', url: '/xo-so-ben-tre.php'},
+  { mien: 'MIỀN NAM', name: 'Bến Tre', url: '/xo-so-ben-tre.php' },
   {
     mien: 'MIỀN NAM',
     name: 'Bình Dương',
@@ -143,9 +143,9 @@ const LOAI_DATA = [
     name: 'Bình Thuận',
     url: '/xo-so-binh-thuan.php'
   },
-  {mien: 'MIỀN NAM', name: 'Cà Mau', url: '/xo-so-ca-mau.php'},
-  {mien: 'MIỀN NAM', name: 'Cần Thơ', url: '/xo-so-can-tho.php'},
-  {mien: 'MIỀN NAM', name: 'Đà Lạt', url: '/xo-so-da-lat.php'},
+  { mien: 'MIỀN NAM', name: 'Cà Mau', url: '/xo-so-ca-mau.php' },
+  { mien: 'MIỀN NAM', name: 'Cần Thơ', url: '/xo-so-can-tho.php' },
+  { mien: 'MIỀN NAM', name: 'Đà Lạt', url: '/xo-so-da-lat.php' },
   {
     mien: 'MIỀN NAM',
     name: 'Đồng Nai',
@@ -171,7 +171,7 @@ const LOAI_DATA = [
     name: 'Kiên Giang',
     url: '/xo-so-kien-giang.php'
   },
-  {mien: 'MIỀN NAM', name: 'Long An', url: '/xo-so-long-an.php'},
+  { mien: 'MIỀN NAM', name: 'Long An', url: '/xo-so-long-an.php' },
   {
     mien: 'MIỀN NAM',
     name: 'Sóc Trăng',
@@ -504,6 +504,243 @@ const LICH_MO_THUONG_MIEN = [
   }
 ]
 
+const CONFIG_CRAWL = [
+  {
+    name: 'Truyền Thống',
+    url: '/xo-so-truyen-thong.php',
+    key: 'ketqua.net',
+    code: 'mb'
+  },
+  {
+    name: 'Điện Toán 123',
+    url: '/xo-so-dien-toan-123.php',
+    key: 'ketqua.net',
+    code: '123'
+  },
+  {
+    name: 'Điện Toán 6x36',
+    url: '/xo-so-dien-toan-6x36.php',
+    key: 'ketqua.net',
+    code: '636'
+  },
+  {
+    name: 'Thần Tài',
+    url: '/xo-so-than-tai.php',
+    key: 'ketqua.net',
+    code: 'tt4'
+  },
+  {
+    name: 'Bình Định',
+    url: '/xo-so-binh-dinh.php',
+    key: 'ketqua.net',
+    code: 'bdi'
+  },
+  {
+    name: 'Đà Nẵng',
+    url: '/xo-so-da-nang.php',
+    key: 'ketqua.net',
+    code: 'dna'
+  },
+  {
+    name: 'Đắc Lắc',
+    url: '/xo-so-dac-lac.php',
+    key: 'ketqua.net',
+    code: 'dlc'
+  },
+  {
+    name: 'Đắc Nông',
+    url: '/xo-so-dac-nong.php',
+    key: 'ketqua.net',
+    code: 'dno'
+  },
+  {
+    name: 'Gia Lai',
+    url: '/xo-so-gia-lai.php',
+    key: 'ketqua.net',
+    code: 'gl'
+  },
+  {
+    name: 'Khánh Hoà',
+    url: '/xo-so-khanh-hoa.php',
+    key: 'ketqua.net',
+    code: 'kh'
+  },
+  {
+    name: 'Kon Tum',
+    url: '/xo-so-kon-tum.php',
+    key: 'ketqua.net',
+    code: 'kt'
+  },
+  {
+    name: 'Ninh Thuận',
+    url: '/xo-so-ninh-thuan.php',
+    key: 'ketqua.net',
+    code: 'nt'
+  },
+  {
+    name: 'Phú Yên',
+    url: '/xo-so-phu-yen.php',
+    key: 'ketqua.net',
+    code: 'py'
+  },
+  {
+    name: 'Quảng Bình',
+    url: '/xo-so-quang-binh.php',
+    key: 'ketqua.net',
+    code: 'qb'
+  },
+  {
+    name: 'Quảng Nam',
+    url: '/xo-so-quang-nam.php',
+    key: 'ketqua.net',
+    code: 'qna'
+  },
+  {
+    name: 'Quảng Ngãi',
+    url: '/xo-so-quang-ngai.php',
+    key: 'ketqua.net',
+    code: 'qng'
+  },
+  {
+    name: 'Quảng Trị',
+    url: '/xo-so-quang-tri.php',
+    key: 'ketqua.net',
+    code: 'qt'
+  },
+  {
+    name: 'Thừa Thiên Huế',
+    url: '/xo-so-thua-thien-hue.php',
+    key: 'ketqua.net',
+    code: 'tth'
+  },
+  {
+    name: 'An Giang',
+    url: '/xo-so-an-giang.php',
+    key: 'ketqua.net',
+    code: 'ag'
+  },
+  {
+    name: 'Bạc Liêu',
+    url: '/xo-so-bac-lieu.php',
+    key: 'ketqua.net',
+    code: 'bl'
+  },
+  {
+    name: 'Bến Tre',
+    url: '/xo-so-ben-tre.php',
+    key: 'ketqua.net',
+    code: 'btr'
+  },
+  {
+    name: 'Bình Dương',
+    url: '/xo-so-binh-duong.php',
+    key: 'ketqua.net',
+    code: 'bdu'
+  },
+  {
+    name: 'Bình Phước',
+    url: '/xo-so-binh-phuoc.php',
+    key: 'ketqua.net',
+    code: 'bp'
+  },
+  {
+    name: 'Bình Thuận',
+    url: '/xo-so-binh-thuan.php',
+    key: 'ketqua.net',
+    code: 'bth'
+  },
+  {
+    name: 'Cà Mau',
+    url: '/xo-so-ca-mau.php',
+    key: 'ketqua.net',
+    code: 'cm'
+  },
+  {
+    name: 'Cần Thơ',
+    url: '/xo-so-can-tho.php',
+    key: 'ketqua.net',
+    code: 'ct'
+  },
+  {
+    name: 'Đà Lạt',
+    url: '/xo-so-da-lat.php',
+    key: 'ketqua.net',
+    code: 'dlt'
+  },
+  {
+    name: 'Đồng Nai',
+    url: '/xo-so-dong-nai.php',
+    key: 'ketqua.net',
+    code: 'dni'
+  },
+  {
+    name: 'Đồng Tháp',
+    url: '/xo-so-dong-thap.php',
+    key: 'ketqua.net',
+    code: 'dt'
+  },
+  {
+    name: 'Hậu Giang',
+    url: '/xo-so-hau-giang.php',
+    key: 'ketqua.net',
+    code: 'hg'
+  },
+  {
+    name: 'Hồ Chí Minh',
+    url: '/xo-so-ho-chi-minh.php',
+    key: 'ketqua.net',
+    code: 'hcm'
+  },
+  {
+    name: 'Kiên Giang',
+    url: '/xo-so-kien-giang.php',
+    key: 'ketqua.net',
+    code: 'kg'
+  },
+  {
+    name: 'Long An',
+    url: '/xo-so-long-an.php',
+    key: 'ketqua.net',
+    code: 'la'
+  },
+  {
+    name: 'Sóc Trăng',
+    url: '/xo-so-soc-trang.php',
+    key: 'ketqua.net',
+    code: 'st'
+  },
+  {
+    name: 'Tây Ninh',
+    url: '/xo-so-tay-ninh.php',
+    key: 'ketqua.net',
+    code: 'tn'
+  },
+  {
+    name: 'Tiền Giang',
+    url: '/xo-so-tien-giang.php',
+    key: 'ketqua.net',
+    code: 'tg'
+  },
+  {
+    name: 'Trà Vinh',
+    url: '/xo-so-tra-vinh.php',
+    key: 'ketqua.net',
+    code: ''
+  },
+  {
+    name: 'Vĩnh Long',
+    url: '/xo-so-vinh-long.php',
+    key: 'ketqua.net',
+    code: 'tv'
+  },
+  {
+    name: 'Vũng Tàu',
+    url: '/xo-so-vung-tau.php',
+    key: 'ketqua.net',
+    code: 'vt'
+  }
+]
+
 // Truyền Thống
 /* dac biet + 7 giai */
 
@@ -529,13 +766,7 @@ export const run = () => {
         .then(() => {
           // insert into tbl GIAI
           return conn(tableName.giai)
-            .insert(GIAI_DATA, 'id')
-            .then(idList => {
-              // update id for each collection
-              return idList.forEach((id, index) => {
-                GIAI_DATA[index].id = id
-              })
-            })
+            .insert(GIAI_DATA)
         })
         .then(() => {
           // insert into tbl MIEN
@@ -570,6 +801,7 @@ export const run = () => {
           let LoaiArr = LOAI_DATA.map(item => {
             const loaiExt = mapLMT[item.mien.trim() + '_' + item.name.trim()][0]
             delete loaiExt.key
+            delete item.url
             return {
               ...item,
               ...loaiExt
@@ -582,12 +814,23 @@ export const run = () => {
             return coll
           })
           return conn(tableName.loai).insert(LoaiArr, 'id')
-          // .then(idList => {
-          //   // update id for each collection
-          //   return idList.forEach((id, index) => {
-          //     LoaiArr[index].id = id
-          //   })
-          // })
+            .then(idList => {
+              // update id for each collection
+              idList.forEach((id, index) => {
+                LoaiArr[index].id = id
+              })
+              return LoaiArr
+            })
+        })
+        .then(loaiArr => {
+          const mapLoai = _.groupBy(loaiArr, 'name')
+          const config = CONFIG_CRAWL.map(item => {
+            const loai = mapLoai[item.name][0]
+            item['loaiId'] = loai.id
+            delete item.name
+            return item
+          })
+          return conn(tableName.configCrawl).insert(config, 'id')
         })
     })
     .then(() => {
@@ -608,6 +851,13 @@ export const run = () => {
           return conn(tableName.giai).select()
             .then(rs => {
               console.log('giai: \n', JSON.stringify(rs, null, 4))
+              return true
+            })
+        })
+        .then(() => {
+          return conn(tableName.configCrawl).select()
+            .then(rs => {
+              console.log('configCrawl: \n', JSON.stringify(rs, null, 4))
               return true
             })
         })

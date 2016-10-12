@@ -9,6 +9,7 @@ const tableName = {
   'mien': 'mien',
   'giai': 'giai',
   'loai': 'loai',
+  'configCrawl': 'config_crawl',
   'ketqua': 'ketqua'
 }
 
