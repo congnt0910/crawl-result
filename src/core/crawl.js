@@ -47,12 +47,10 @@ export default class Crawl {
    */
   createScheduleCrawl = () => {
     this.crawlSchedule = schedule.scheduleJob('*/5 * * * *', () => {
-      console.log('The scheduled crawl task ran: ', this.cateInfo.name)
-      debug('The scheduled crawl task ran: ', this.cateInfo.name, Date())
+      debug(`   [${this.cateInfo.name}]The scheduled crawl task ran on ${Date()}`)
       return this._scan()
     })
-    console.log('The crawl schedule has been initialized')
-    debug('The crawl schedule has been initialized', Date())
+    debug(`[${this.cateInfo.name}] The crawl schedule has been initialized on ${Date()}`)
   }
 
   /**
@@ -62,7 +60,7 @@ export default class Crawl {
    */
   _scan () {
     if (!this.config) {
-      console.log('config not loaded yet.')
+      debug(`   [${this.cateInfo.name}] config not loaded yet.`)
       return false  // Promise.resolve(false)
     }
     const api = new Api()
@@ -72,21 +70,17 @@ export default class Crawl {
           return api.reloadResult(this.config.code)
         }
         this._update = true
-        debug('get full data', this.config.url, this.date)
         // get full for first run crawl
         return api.crawlByDay(this.config.url, this.date)
       })
       .then(res => {
-        debug('data: ', JSON.stringify(res, null, 4))
         return this._compareData(res)
       })
       .then(() => {
-        debug('save')
         return this._save()
       })
       .then(() => {
         const isComplete = api.finishStatus
-        debug('check complete: ', isComplete)
         return this._checkStop(isComplete)
       })
       .catch(err => {
@@ -109,9 +103,8 @@ export default class Crawl {
   _checkStop (isComplete) {
     const now = moment()
     const end = moment(this.cateInfo.scanTimeEnd, 'HH:mm')
-    debug('_checkStop: ', now.toString(), end.toString(), now >= end, isComplete)
     if (now >= end || isComplete) {
-      debug('The scheduled crawl task stopped: ', Date())
+      debug(`   [${this.cateInfo.name}] The scheduled crawl task stopped on ${Date()}`)
       this.crawlSchedule.cancel()
     }
     return true
@@ -124,13 +117,13 @@ export default class Crawl {
    */
   _save () {
     return Promise.resolve()
-      .then(res => {
+      .then(() => {
         // gen insert data
         const insertData = []
         // Duyet qua cac giai
         _.each(this.finalData, (valList, key) => {
           // duyet qua cac ket qua cua giai
-          _.each(valList, (val, idx) => {
+          _.each(valList, (val) => {
             insertData.push({
               value: val,
               date: moment(this.date, config.inputFormatDate).format('X'),

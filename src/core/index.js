@@ -50,10 +50,9 @@ const processMainSchedule = () => {
         const scanDate = JSON.parse(item.scanDate)
         return scanDate.indexOf(dayOfWeek) > -1
       })
-      debug('create schedule each cate')
+      debug('create schedule each cate:')
       // create schedule each cate
       cateInDay.forEach(item => {
-        debug('   ->|', item.name)
         _createCateSchedule(date, item)
       })
     })
@@ -76,12 +75,11 @@ const _createCateSchedule = (date, cateInfo) => {
   }
   // cron job runs at scanTimeBegin every day but cancellation this job in first run
   const crawlSchedule = schedule.scheduleJob(`${scanTimeBegin.minutes()} ${scanTimeBegin.hours()} * * *`, () => {
-    console.log('The scheduled cate task ran: ', cateInfo.name)
     const c = new Crawl(date, cateInfo)
     c.createScheduleCrawl()
     crawlSchedule.cancel() // cancel job. it will run only once
   })
-  console.log('The cate schedule has been initialized')
+  debug(`   =>| The cate [${cateInfo.name}] schedule has been initialized`)
 }
 
 const _handleError = (errInfo) => {
