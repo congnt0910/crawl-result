@@ -104,6 +104,7 @@ export class Api {
         const currentTimeStamp = Date.now()
         const loadedTimeStemp = parseInt(resultParts[0] + '000')
         const difference = currentTimeStamp - loadedTimeStemp
+        // out date range
         if (difference < 0 || difference > 5 * 60 * 1000) {
           return -2
         }
