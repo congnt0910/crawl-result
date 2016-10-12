@@ -4,6 +4,9 @@ import schedule from 'node-schedule'
 import Crawl from './crawl'
 import config from '../config'
 
+import LogDebug from '../helper/logdebug'
+const debug = new LogDebug('TEST')
+
 /***
  * start main schedule
  */
@@ -15,7 +18,8 @@ const run = () => {
   const now = moment()
   const tmp = now.format('MM/DD/YYYY')
   const scheduleTime = moment(tmp + ' 06:00:00', 'MM/DD/YYYY HH:mm:ss')
-  if (scheduleTime > now) {
+  if (scheduleTime.hours() > now.hours()) {
+    debug('run processMainSchedule')
     processMainSchedule()
   }
 }
@@ -46,13 +50,14 @@ const processMainSchedule = () => {
         const scanDate = JSON.parse(item.scanDate)
         return scanDate.indexOf(dayOfWeek) > -1
       })
+      debug('create schedule each cate')
       // create schedule each cate
       cateInDay.forEach(item => {
+        debug('   ->|', item.name)
         _createCateSchedule(date, item)
       })
     })
     .catch(err => {
-      console.log(err.stack)
       _handleError(err)
     })
 }
@@ -81,6 +86,7 @@ const _createCateSchedule = (date, cateInfo) => {
 
 const _handleError = (errInfo) => {
   // do something, may be write error log into file
+  console.error(errInfo.stack)
 }
 
 // TODO: nhận đầu vào là 1 này -> Quét lấy dữ liệu tất cả loại xổ số mở thưởng ngày đó lưu vào db

@@ -1,5 +1,4 @@
 import config from '../../config'
-import { isPro, isDropDb } from '../../bin/env'
 import { createSchema } from './schema'
 import _ from 'lodash'
 import LogDebug from '../../helper/logdebug'
@@ -29,9 +28,6 @@ const waitDbReady = () => {
  * @returns {Promise.<error|boolean>}
  */
 const createDatabase = () => {
-  if (isPro()) {
-    return Promise.resolve(true)
-  }
   const knexMaster = require('knex')({
     client: 'pg',
     connection: {...config.dbConfig, database: 'postgres'}
@@ -56,14 +52,11 @@ const createDatabase = () => {
  *
  */
 const dropDatabase = () => {
-  if (isPro() || !isDropDb()) {
-    return Promise.resolve(true)
-  }
   const knexMaster = require('knex')({
     client: 'pg',
     connection: {...config.dbConfig, database: 'postgres'}
   })
-  return knexMaster.raw(`DROP DATABASE ${config.dbConfig.database};`)
+  return knexMaster.raw(`DROP DATABASE IF EXISTS ${config.dbConfig.database};`)
     .then(() => {
       // destroy connection
       return knexMaster.destroy()
@@ -79,25 +72,12 @@ const dropDatabase = () => {
  * @returns {connection} Knex object
  */
 const connect = () => {
-  // TOTO: Research migrates
   const conn = require('knex')({
     client: 'pg',
     connection: config.dbConfig,
     ...config.dbConfigExtra
   })
-
-  if (isPro()) {
-    dbReady = true
-    return conn
-  }
-  dropDatabase()
-    .then(createDatabase)
-    .then(() => createSchema(tableName, conn))
-    .then(() => {
-      _debug('db ready')
-      dbReady = true
-    })
-
+  dbReady = true
   return conn
 }
 
@@ -122,5 +102,6 @@ export {
   waitDbReady,
   createDatabase,
   dropDatabase,
+  createSchema,
   truncateAllTable
 }

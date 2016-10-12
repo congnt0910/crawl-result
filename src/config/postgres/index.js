@@ -1,7 +1,7 @@
 const dbConfig = {
   host: '127.0.0.1',
-  user: 'congnt',
-  // password: '1',
+  user: 'postgres',
+  password: '1',
   database: 'xs_db'
 }
 

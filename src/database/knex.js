@@ -2,7 +2,9 @@ import connect, {
   tableName,
   waitDbReady,
   truncateAllTable,
-  dropDatabase
+  dropDatabase,
+  createSchema,
+  createDatabase
 }
   from './postgres' // change it if use another client
 
@@ -13,6 +15,8 @@ export {
   tableName,
   waitDbReady,
   truncateAllTable,
-  dropDatabase
+  dropDatabase,
+  createSchema,
+  createDatabase
 }
 
