@@ -9,7 +9,7 @@ const debug = new LogDebug('TEST')
 const global = {}
 
 const start = '01/01/2010' // MM/DD/YYYY
-const end = '06/01/2010'
+const end = '01/01/2012'
 
 let currentDate
 // get all cate
@@ -57,7 +57,7 @@ Promise.resolve()
           }))
           .then(() => {
             debug('All cate in day complete\n')
-            loop()
+            setTimeout(loop, 20)
           })
           .catch(err => reject(err))
       }

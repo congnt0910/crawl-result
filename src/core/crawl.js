@@ -87,7 +87,8 @@ export default class Crawl {
         }
         this._update = true
         // get full for first run crawl
-        return api.crawlByDay(this.config.url, this.date)
+        return api.reloadResult(this.config.code, true)
+        // return api.crawlByDay(this.config.url, this.date)
       })
       .then(res => {
         return this._compareData(res)

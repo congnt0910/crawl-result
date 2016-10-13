@@ -5,15 +5,15 @@ import config from '../../config'
 import _ from 'lodash'
 const debug = require('debug')('ketquanet')
 const GIAI_DATA = [
-  { id: 0, name: 'Đặc biệt' },
-  { id: 1, name: 'Giải nhất' },
-  { id: 2, name: 'Giải nhì' },
-  { id: 3, name: 'Giải ba' },
-  { id: 4, name: 'Giải tư' },
-  { id: 5, name: 'Giải năm' },
-  { id: 6, name: 'Giải sáu' },
-  { id: 7, name: 'Giải bảy' },
-  { id: 8, name: 'Giải tám' }
+  {id: 0, name: 'Đặc biệt'},
+  {id: 1, name: 'Giải nhất'},
+  {id: 2, name: 'Giải nhì'},
+  {id: 3, name: 'Giải ba'},
+  {id: 4, name: 'Giải tư'},
+  {id: 5, name: 'Giải năm'},
+  {id: 6, name: 'Giải sáu'},
+  {id: 7, name: 'Giải bảy'},
+  {id: 8, name: 'Giải tám'}
 ]
 const giaiMap = _.groupBy(GIAI_DATA, 'name')
 
@@ -73,6 +73,7 @@ export class Api {
 
         const data = {} // store data crawl
         let giai = ''
+        // error when cate is than tai, 123, 636
         $rows.get().forEach(function (tr) {
           // get all cell (td) in row
           let $tds = $(tr).find('td')
@@ -80,9 +81,9 @@ export class Api {
           $tds = $tds.not($giai)
           const tmpGiai = $giai.text().trim()
           if (tmpGiai !== '') giai = tmpGiai
+          const idGiai = giaiMap[giai][0].id
           $tds.get().forEach(function (td) {
             const $td = $(td)
-            const idGiai = giaiMap[giai][0].id
             data[idGiai] = data[idGiai] || []
             data[idGiai].push($td.text().trim())
           })
@@ -96,8 +97,12 @@ export class Api {
       })
   }
 
-  reloadResult (targetCode) {
+  reloadResult (targetCode, ignoreCheckDate) {
     const reloadUrl = `${this.server}/pre_loads/kq-${targetCode}.raw?t=${Date.now()}`
+    const errorConfig = {
+      url: reloadUrl,
+      func: 'reloadResult'
+    }
     return this.request.get(reloadUrl)
       .then(res => {
         const resultParts = res.split(';')
@@ -105,7 +110,7 @@ export class Api {
         const loadedTimeStemp = parseInt(resultParts[0] + '000')
         const difference = currentTimeStamp - loadedTimeStemp
         // out date range
-        if (difference < 0 || difference > 5 * 60 * 1000) {
+        if (!ignoreCheckDate && (difference < 0 || difference > 5 * 60 * 1000)) {
           return -2
         }
         const parts = res.split(';')
@@ -135,13 +140,17 @@ export class Api {
             if (/^[0-9]*$/.test(currentPrize)) {
               lotoList[prizeIndex] = lotoList[prizeIndex] || []
               lotoList[prizeIndex].push(currentPrize)
-              if (currentPrize === 0) {
+              if (prizeIndex === 0) {
                 this.finishStatus = true
               }
             }
           })
         })
         return lotoList
+      })
+      .catch(err => {
+        err.extendInfo = errorConfig
+        throw err
       })
   }
 }

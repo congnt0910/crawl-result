@@ -725,13 +725,13 @@ const CONFIG_CRAWL = [
     name: 'Trà Vinh',
     url: '/xo-so-tra-vinh.php',
     key: 'ketqua.net',
-    code: ''
+    code: 'tv'
   },
   {
     name: 'Vĩnh Long',
     url: '/xo-so-vinh-long.php',
     key: 'ketqua.net',
-    code: 'tv'
+    code: 'vl'
   },
   {
     name: 'Vũng Tàu',
