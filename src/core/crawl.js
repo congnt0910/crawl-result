@@ -11,8 +11,6 @@ import moment from 'moment'
 import LogDebug from '../helper/logdebug'
 const debug = new LogDebug('CRAW')
 
-// TODO: determine when to stop
-
 /**
  * Crawl data online
  */

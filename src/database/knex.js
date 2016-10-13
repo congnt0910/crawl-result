@@ -26,7 +26,7 @@ export {
    */
   tableName,
   /**
-   * Wait to connection
+   * Wait until the connection is ready
    * @function
    * @returns {Promise}
    */
@@ -52,6 +52,8 @@ export {
   /**
    * Create database
    * @function
+   * @param tableName {Object} The name of all tables
+   * @param conn {Knex} The database connection
    * @returns {Promise}
    */
   createDatabase

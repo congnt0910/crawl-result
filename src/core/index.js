@@ -87,7 +87,6 @@ const _handleError = (errInfo) => {
   console.error(errInfo.stack)
 }
 
-// TODO: nhận đầu vào là 1 này -> Quét lấy dữ liệu tất cả loại xổ số mở thưởng ngày đó lưu vào db
 // TODO: tao api de control tu ui
 /**
  * Module core
