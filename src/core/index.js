@@ -89,7 +89,10 @@ const _handleError = (errInfo) => {
 
 // TODO: nhận đầu vào là 1 này -> Quét lấy dữ liệu tất cả loại xổ số mở thưởng ngày đó lưu vào db
 // TODO: tao api de control tu ui
-
+/**
+ * Module core
+ * @module core/index
+ */
 export {
   /**
    * start main schedule
@@ -100,7 +103,7 @@ export {
    * Hàm xử lý cho main schedule
    * main schedule la schedule chay vao 1 gio trong ngay de xac dinh co bao nhieu loai xs mo thuong trong ngay
    * -> tao schedule cho tung loai xs
-   * @function
+   * @private
    * @returns {Promise}
    */
   processMainSchedule

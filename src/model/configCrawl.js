@@ -8,7 +8,7 @@ const getAll = () => {
   return conn(tableName.configCrawl).select()
 }
 
-/**
+/***
  * Find config crawl with condition
  * @param filter {object}
  * @returns {*}

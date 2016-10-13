@@ -2,7 +2,7 @@
   "plugins": ["plugins/markdown"],
   "templates": {
     "systemName": "Demo jsdoc",
-    "copyright": "GraphQL Endpoint Docs",
+    "copyright": "Crawl Data Lib Docs",
     "navType": "inline",
     "theme": "flatly",
     "linenums": true,

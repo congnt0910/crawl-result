@@ -8,8 +8,11 @@ const debug = new LogDebug('TEST')
 
 const global = {}
 
-const start = '01/01/2010' // MM/DD/YYYY
-const end = '01/01/2012'
+// const start = '01/01/2010' // MM/DD/YYYY
+// const end = '01/01/2012'
+
+const start = '10/10/2016' // MM/DD/YYYY
+const end = '10/13/2016'
 
 let currentDate
 // get all cate

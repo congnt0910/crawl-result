@@ -5,18 +5,28 @@ import config from '../../config'
 import _ from 'lodash'
 const debug = require('debug')('ketquanet')
 const GIAI_DATA = [
-  {id: 0, name: 'Đặc biệt'},
-  {id: 1, name: 'Giải nhất'},
-  {id: 2, name: 'Giải nhì'},
-  {id: 3, name: 'Giải ba'},
-  {id: 4, name: 'Giải tư'},
-  {id: 5, name: 'Giải năm'},
-  {id: 6, name: 'Giải sáu'},
-  {id: 7, name: 'Giải bảy'},
-  {id: 8, name: 'Giải tám'}
+  { id: 0, name: 'Đặc biệt' },
+  { id: 1, name: 'Giải nhất' },
+  { id: 2, name: 'Giải nhì' },
+  { id: 3, name: 'Giải ba' },
+  { id: 4, name: 'Giải tư' },
+  { id: 5, name: 'Giải năm' },
+  { id: 6, name: 'Giải sáu' },
+  { id: 7, name: 'Giải bảy' },
+  { id: 8, name: 'Giải tám' }
 ]
 const giaiMap = _.groupBy(GIAI_DATA, 'name')
-
+/**
+ * Enum for special category loto
+ * @readonly
+ * @enum {string}
+ */
+export const CateSpecialType = {
+  'NULL': null,
+  'DIEN_TOAN_123': 'Điện Toán 123',
+  'DIEN_TOAN_636': 'Điện Toán 6x63',
+  'THAN_TAI': 'Thần Tài'
+}
 /**
  *  Api crawl data from ketqua_net
  */
@@ -33,8 +43,10 @@ export class Api {
    * crawlByDay
    * @param uri {string} path url to crawl
    * @param date {string} Ngay crawl data. Format: MM/DD/YYYY
+   * @param special {CateSpecialType}
+   * @returns {*}
    */
-  crawlByDay (uri, date) {
+  crawlByDay (uri, date, special = null) {
     // check validate date
     date = moment(date, config.inputFormatDate).format(this.outputFormatDate)
     if (date === 'Invalid Date') return Promise.reject(new Error('Invalid Date'))
@@ -77,11 +89,17 @@ export class Api {
         $rows.get().forEach(function (tr) {
           // get all cell (td) in row
           let $tds = $(tr).find('td')
-          const $giai = $tds.eq(0)
-          $tds = $tds.not($giai)
-          const tmpGiai = $giai.text().trim()
-          if (tmpGiai !== '') giai = tmpGiai
-          const idGiai = giaiMap[giai][0].id
+
+          let idGiai
+          if (!special) {
+            const $giai = $tds.eq(0)
+            $tds = $tds.not($giai)
+            const tmpGiai = $giai.text().trim()
+            if (tmpGiai !== '') giai = tmpGiai
+            idGiai = giaiMap[giai][0].id
+          } else {
+            idGiai = giaiMap['Đặc biệt'][0].id
+          }
           $tds.get().forEach(function (td) {
             const $td = $(td)
             data[idGiai] = data[idGiai] || []
@@ -90,14 +108,33 @@ export class Api {
         })
         const idGiai = giaiMap['Đặc biệt'][0].id
         if (data[idGiai].length > 0) {
-          this.finishStatus = true
+          this.finishStatus = this._checkFinish(special, data[idGiai])
         }
         debug(JSON.stringify(data, null, 4))
         return data // crawl data complete
       })
   }
 
-  reloadResult (targetCode, ignoreCheckDate) {
+  _checkFinish (special, finalRowData) {
+    if (special === CateSpecialType.DIEN_TOAN_123) {
+      return finalRowData.length === 3
+    }
+    if (special === CateSpecialType.DIEN_TOAN_636) {
+      return finalRowData.length === 6
+    }
+    if (special === CateSpecialType.THAN_TAI) {
+      return finalRowData.length === 1
+    }
+    return true
+  }
+
+  /**
+   * Hàm này lấy dữ liệu mới nhất từ trang nguồn
+   * @param targetCode {string}
+   * @param ignoreCheckDate {boolean}
+   * @returns {Promise.<Object|Error>}
+   */
+  reloadResult (targetCode, ignoreCheckDate = false) {
     const reloadUrl = `${this.server}/pre_loads/kq-${targetCode}.raw?t=${Date.now()}`
     const errorConfig = {
       url: reloadUrl,

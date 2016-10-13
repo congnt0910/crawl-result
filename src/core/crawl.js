@@ -3,7 +3,7 @@ import {
   configCrawlModel
 }
   from '../model'
-import { Api } from '../api/ketqua.net'
+import { Api, CateSpecialType } from '../api/ketqua.net'
 import _ from 'lodash'
 import schedule from 'node-schedule'
 import config from '../config'
@@ -16,10 +16,10 @@ const debug = new LogDebug('CRAW')
 /**
  * Crawl data online
  */
-export default class Crawl {
-  constructor (date, cateInfo) {
+class Crawl {
+  constructor (date, _cateInfo) {
     this.date = date
-    this.cateInfo = cateInfo
+    this.cateInfo = _cateInfo
     this.finalData = {}
     this.crawlSchedule = null
     this._key = 'ketqua.net'
@@ -44,8 +44,10 @@ export default class Crawl {
 
   /**
    * Func create schedule run crawl data every 5 minutes
+   * @param runNow {boolean}
+   * @returns {Promise.<TResult>}
    */
-  createScheduleCrawl = (runNow = false) => {
+  createScheduleCrawl (runNow = false) {
     if (runNow) {
       // wait load config
       return new Promise(resolve => {
@@ -87,8 +89,23 @@ export default class Crawl {
         }
         this._update = true
         // get full for first run crawl
-        return api.reloadResult(this.config.code, true)
-        // return api.crawlByDay(this.config.url, this.date)
+        // return api.reloadResult(this.config.code, true)
+        let special
+        switch (this.cateInfo.name) {
+          case 'Điện Toán 123':
+            special = CateSpecialType.DIEN_TOAN_123
+            break
+          case 'Điện Toán 6x36':
+            special = CateSpecialType.DIEN_TOAN_636
+            break
+          case 'Thần Tài':
+            special = CateSpecialType.DIEN_TOAN_636
+            break
+          default:
+            special = CateSpecialType.NULL
+            break
+        }
+        return api.crawlByDay(this.config.url, this.date, special)
       })
       .then(res => {
         return this._compareData(res)
@@ -164,3 +181,5 @@ export default class Crawl {
       })
   }
 }
+
+export default Crawl

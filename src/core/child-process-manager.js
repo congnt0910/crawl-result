@@ -35,7 +35,7 @@ class ChildProcess {
   }
 }
 
-/**
+/***
  * Child process manager
  */
 export default class ChildProcessManager {
@@ -47,7 +47,7 @@ export default class ChildProcessManager {
     this.childProcessList = {}
   }
 
-  /**
+  /***
    * kill a child process if this process active
    * @param uuid {string} uuid of child process
    */
@@ -61,7 +61,7 @@ export default class ChildProcessManager {
     }
   }
 
-  /**
+  /***
    * Create child process
    * @param fullFilePath {string} path to script exe in child process
    * @returns {ChildProcess}
@@ -81,7 +81,7 @@ export default class ChildProcessManager {
     return child
   }
 
-  /**
+  /***
    * Kill all child process and pending task
    */
   killAll () {
