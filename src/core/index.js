@@ -13,12 +13,12 @@ const debug = new LogDebug('TEST')
 const run = () => {
   // create main schedule. runs at 6:00am every day
   schedule.scheduleJob('0 6 * * *', processMainSchedule)
-  console.log('The main schedule has been initialized')
+  debug('The main schedule has been initialized')
   // run manual if start app after 6:00 am
   const now = moment()
   const tmp = now.format('MM/DD/YYYY')
   const scheduleTime = moment(tmp + ' 06:00:00', 'MM/DD/YYYY HH:mm:ss')
-  if (scheduleTime.hours() > now.hours()) {
+  if (scheduleTime.hours() < now.hours()) {
     debug('run processMainSchedule')
     processMainSchedule()
   }
@@ -79,7 +79,7 @@ const _createCateSchedule = (date, cateInfo) => {
     c.createScheduleCrawl()
     crawlSchedule.cancel() // cancel job. it will run only once
   })
-  debug(`   =>| The cate [${cateInfo.name}] schedule has been initialized`)
+  debug(`   => [${cateInfo.name}] The cate schedule has been initialized`)
 }
 
 const _handleError = (errInfo) => {
