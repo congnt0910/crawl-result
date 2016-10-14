@@ -40,7 +40,7 @@ const processMainSchedule = () => {
   } else {
     dayOfWeek += 1
   }
-  const date = now.toString(config.inputFormatDate)
+  const date = now.format(config.inputFormatDate)
   return Promise.resolve()
     .then(loaiModel.getAll)
     .then(res => {
@@ -73,6 +73,15 @@ const _createCateSchedule = (date, cateInfo) => {
     _handleError(new Error(`scan time invalid: ${cateInfo.name} [ ${cateInfo.scanTimeBegin} - ${cateInfo.scanTimeEnd} ]`))
     return
   }
+
+  const now = moment() // now
+  if (now.day() === scanTimeBegin.day() && now.hours() >= scanTimeBegin.hours() && now.minutes() > scanTimeBegin.minutes()) {
+    // run now
+    const c = new Crawl(date, cateInfo)
+    c.createScheduleCrawl()
+    return // not run schedule cate
+  }
+
   // cron job runs at scanTimeBegin every day but cancellation this job in first run
   const crawlSchedule = schedule.scheduleJob(`${scanTimeBegin.minutes()} ${scanTimeBegin.hours()} * * *`, () => {
     const c = new Crawl(date, cateInfo)
