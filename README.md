@@ -7,6 +7,22 @@ Craw Result Data
 
 # How to run?
 
+## Install node modules
+	
+	npm i
+
+## Config database
+Change file	`src/config/postgres/index.js`
+	
+```javascript
+const dbConfig = {
+	host: '<host>',
+	user: '<your user connect to postgres>',
+	password: '<your password to connect to postgres>',
+	database: 'xs_db'
+}
+```
+
 Before run must be insert default data into database:
 
 	npm run migrate
