@@ -833,35 +833,35 @@ export const run = () => {
           return conn(tableName.configCrawl).insert(config, 'id')
         })
     })
-    .then(() => {
-      // select giai to check insert data
-      return conn(tableName.mien).select()
-        .then(rs => {
-          console.log('mien: \n', JSON.stringify(rs, null, 4))
-          return true
-        })
-        .then(() => {
-          return conn(tableName.loai).select()
-            .then(rs => {
-              console.log('loai: \n', JSON.stringify(rs, null, 4))
-              return true
-            })
-        })
-        .then(() => {
-          return conn(tableName.giai).select()
-            .then(rs => {
-              console.log('giai: \n', JSON.stringify(rs, null, 4))
-              return true
-            })
-        })
-        .then(() => {
-          return conn(tableName.configCrawl).select()
-            .then(rs => {
-              console.log('configCrawl: \n', JSON.stringify(rs, null, 4))
-              return true
-            })
-        })
-    })
+    // .then(() => {
+    //   // select giai to check insert data
+    //   return conn(tableName.mien).select()
+    //     .then(rs => {
+    //       console.log('mien: \n', JSON.stringify(rs, null, 4))
+    //       return true
+    //     })
+    //     .then(() => {
+    //       return conn(tableName.loai).select()
+    //         .then(rs => {
+    //           console.log('loai: \n', JSON.stringify(rs, null, 4))
+    //           return true
+    //         })
+    //     })
+    //     .then(() => {
+    //       return conn(tableName.giai).select()
+    //         .then(rs => {
+    //           console.log('giai: \n', JSON.stringify(rs, null, 4))
+    //           return true
+    //         })
+    //     })
+    //     .then(() => {
+    //       return conn(tableName.configCrawl).select()
+    //         .then(rs => {
+    //           console.log('configCrawl: \n', JSON.stringify(rs, null, 4))
+    //           return true
+    //         })
+    //     })
+    // })
     .catch(err => {
       console.log(err.stack)
     })

@@ -9,10 +9,8 @@ import {
 import { run as runMigrate } from '../database/migrate'
 
 const run = () => {
-  console.log('drop database')
   return dropDatabase()
     .then(() => {
-      console.log('create database')
       return createDatabase()
     })
     .then(() => {

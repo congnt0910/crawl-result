@@ -1,6 +1,7 @@
 import config from '../../config'
 import { createSchema } from './schema'
 import _ from 'lodash'
+import { isPro } from '../../bin/env'
 import LogDebug from '../../helper/logdebug'
 const _debug = new LogDebug('DATABASE')
 
@@ -28,9 +29,12 @@ const waitDbReady = () => {
  * @returns {Promise.<error|boolean>}
  */
 const createDatabase = () => {
+  if (isPro()) {
+    return Promise.resolve(true)
+  }
   const knexMaster = require('knex')({
     client: 'pg',
-    connection: {...config.dbConfig, database: 'postgres'}
+    connection: { ...config.dbConfig, database: 'postgres' }
   })
   return knexMaster.raw(`SELECT * FROM pg_database WHERE datname = '${config.dbConfig.database}'`)
     .then(row => {
@@ -49,12 +53,15 @@ const createDatabase = () => {
 
 /***
  * Drop database. just only use for develop or test
- *
+ * @returns {Promise.<error|boolean>}
  */
 const dropDatabase = () => {
+  if (isPro()) {
+    return Promise.resolve(true)
+  }
   const knexMaster = require('knex')({
     client: 'pg',
-    connection: {...config.dbConfig, database: 'postgres'}
+    connection: { ...config.dbConfig, database: 'postgres' }
   })
   return knexMaster.raw(`DROP DATABASE IF EXISTS ${config.dbConfig.database};`)
     .then(() => {

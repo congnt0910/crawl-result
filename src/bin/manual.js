@@ -2,23 +2,22 @@ import moment from 'moment'
 import { loaiModel } from '../model'
 import Crawl from '../core/crawl'
 import { waitDbReady } from '../database/knex'
+import config from '../config'
 
 import LogDebug from '../helper/logdebug'
 const debug = new LogDebug('TEST')
 
 const global = {}
 
-// const start = '01/01/2010' // MM/DD/YYYY
-// const end = '01/01/2012'
-
-const start = '10/10/2016' // MM/DD/YYYY
-const end = '10/13/2016'
-
+const start = '10/16/2002' // MM/DD/YYYY
+let end
 let currentDate
+
 // get all cate
 Promise.resolve()
   .then(waitDbReady)
   .then(() => {
+    end = moment().format(config.inputFormatDate)
     return loaiModel.getAll()
   })
   .then(res => {
